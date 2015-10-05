@@ -8,7 +8,7 @@ Sample code is available for both iOS and Android, with iOS including both Swift
 
 Alternatively, you can use these samples to learn more about how you'd build your own examples from scratch. 
 
-For specifics for iOS and Android, see their respective READMEs. (iOS | Android)
+For specifics for iOS and Android, see their respective READMEs. ([iOS](https://github.com/carnivalmobile/carnival-stream-examples/tree/master/iOS) | [Android](https://github.com/carnivalmobile/carnival-stream-examples/tree/master/Android))
 
 ## Contributing
 These examples are fully open source! If you'd like to suggest an improvement, make an improvement or report and issue - please do! We'll review them ASAP and get back to you. 
