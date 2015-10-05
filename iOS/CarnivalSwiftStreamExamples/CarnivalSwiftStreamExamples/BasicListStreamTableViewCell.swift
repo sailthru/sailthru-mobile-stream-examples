@@ -65,12 +65,12 @@ class BasicListStreamTableViewCell: UITableViewCell {
             self.typeImage.image = UIImage(named: "text_icon")
         }
         
-        var fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
+        let fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
         self.typeLabel.font = UIFont.systemFontOfSize(fontSize)
     }
     
     func configureTitleLabel(message:CarnivalMessage) {
-        var fontSize: CGFloat = ScreenSizeHelper.isIphone5orLess() ? 15 : 18
+        let fontSize: CGFloat = ScreenSizeHelper.isIphone5orLess() ? 15 : 18
         self.titleTextView.textContainerInset = UIEdgeInsetsZero
         self.titleTextView.textContainer.lineFragmentPadding = 0
         self.titleTextView.text = message.title
@@ -82,7 +82,7 @@ class BasicListStreamTableViewCell: UITableViewCell {
         self.unreadLabel.hidden = message.read
         self.unreadLabel.clipsToBounds = true
         self.unreadLabel.text = NSLocalizedString("Unread", comment:"")
-        var fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
+        let fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
         self.unreadLabel.font = UIFont.systemFontOfSize(fontSize)
         self.unreadLabel.layer.cornerRadius = self.unreadLabel.frame.size.height/2
 
@@ -90,17 +90,17 @@ class BasicListStreamTableViewCell: UITableViewCell {
 
     func configureDateLabel(message: CarnivalMessage) {
         self.timeAgoLabel.text = NSDate.timeAgoSinceDate(message.createdAt)
-        var fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
+        let fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
         self.timeAgoLabel.font = UIFont.systemFontOfSize(fontSize)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setSelected(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
     override func setHighlighted(highlighted: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setHighlighted(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }

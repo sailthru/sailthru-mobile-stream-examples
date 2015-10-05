@@ -27,13 +27,13 @@ class GraphicalCardTableViewCell: TextCardTableViewCell {
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setSelected(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setHighlighted(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }

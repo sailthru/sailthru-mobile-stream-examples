@@ -60,7 +60,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func heightForImageCell(indexPath: NSIndexPath) -> CGFloat {
-        var width = CGRectGetWidth(self.view.bounds)
+        let width = CGRectGetWidth(self.view.bounds)
         return width * (3.0/5.0) + 1 //Add 1 for the cell separator
     }
     
@@ -81,7 +81,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        var size:CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        let size:CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
         return size.height + 1 //Add 1 for the cell separator
     }
     
@@ -152,7 +152,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
             self.refreshControl?.endRefreshing()
             
             if let error = anError {
-                print(error)
+                print(error, terminator: "")
                 self.tableView.hidden = true
                 self.emptyDataLabel.text = NSLocalizedString("Failed to get messages", comment:"")
                 

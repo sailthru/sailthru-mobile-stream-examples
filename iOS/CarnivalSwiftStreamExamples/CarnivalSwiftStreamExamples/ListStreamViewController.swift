@@ -54,11 +54,11 @@ class ListStreamViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //Define the header view
-        var headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 60))
+        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 60))
         headerView.backgroundColor = UIColor(red: 241.0/255.0, green: 241.0/255.0, blue: 245.0/255.0, alpha: 1)
 
         //Define and configure the label
-        var messagesLabel = UILabel(frame: CGRectMake(10, 6, tableView.frame.size.width, 30))
+        let messagesLabel = UILabel(frame: CGRectMake(10, 6, tableView.frame.size.width, 30))
         if  self.messages.count == 0 {
             messagesLabel.text = NSLocalizedString("1 MESSAGE", comment:"")
         }
@@ -134,8 +134,8 @@ class ListStreamViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var button = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSLocalizedString("Delete", comment:"")) { (action, indexPath) -> Void in
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let button = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: NSLocalizedString("Delete", comment:"")) { (action, indexPath) -> Void in
             self.tableView(tableView, commitEditingStyle: UITableViewCellEditingStyle.Delete, forRowAtIndexPath: indexPath)
         }
         
@@ -169,7 +169,7 @@ class ListStreamViewController: UIViewController, UITableViewDataSource, UITable
             self.refreshControl?.endRefreshing()
             
             if let error = anError {
-                print(error)
+                print(error, terminator: "")
                 self.tableView.hidden = true
                 self.emptyDataLabel.text = NSLocalizedString("Failed to get messages", comment:"")
 

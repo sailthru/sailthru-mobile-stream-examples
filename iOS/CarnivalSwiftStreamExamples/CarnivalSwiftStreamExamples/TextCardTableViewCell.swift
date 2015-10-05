@@ -38,7 +38,7 @@ class TextCardTableViewCell: UITableViewCell {
     }
     
     func configureUnreadLabel(message: CarnivalMessage) {
-        var fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
+        let fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
         self.unreadLabel.font = UIFont.systemFontOfSize(fontSize)
         self.unreadLabel.hidden = message.read
         self.unreadLabel.layer.cornerRadius = self.unreadLabel.frame.size.height/2
@@ -47,7 +47,7 @@ class TextCardTableViewCell: UITableViewCell {
     }
     
     func configureDateLabel(message: CarnivalMessage) {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "d MMM YYYY"
         self.timeAgoLabel.text = dateFormatter.stringFromDate(message.createdAt)
     }
@@ -68,13 +68,13 @@ class TextCardTableViewCell: UITableViewCell {
     
     
     override func setSelected(selected: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setSelected(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
     
     override func setHighlighted(highlighted: Bool, animated: Bool) {
-        var backgroundColor = self.unreadLabel.backgroundColor
+        let backgroundColor = self.unreadLabel.backgroundColor
         super.setHighlighted(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
