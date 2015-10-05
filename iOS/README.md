@@ -1,4 +1,4 @@
-# Carnival Message Stream Examples
+# Carnival Message Stream Examples (iOS)
 This repo contains a sample project with several examples of possible custom message streams. The point of these examples is to be copied into your own project and modified to suit the look and feel of the application.
 
 ## Requirements
