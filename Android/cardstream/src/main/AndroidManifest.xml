@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.carnivalmobile.stream.card">
+
+    <application>
+        <activity android:name=".CardStreamActivity"/>
+    </application>
+
+</manifest>

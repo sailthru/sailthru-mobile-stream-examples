@@ -1,0 +1,17 @@
+<resources>
+    <!--Message cell Strings-->
+    <string name="unread">Unread</string>
+    <string name="image">Image</string>
+    <string name="video">Video</string>
+    <string name="link">Link</string>
+    <string name="call">Call</string>
+    <string name="text">Text</string>
+
+    <!--Messages loading feedback-->
+    <string name="get_message_failed">Failed to get Messages</string>
+    <string name="no_messages">Nothing to see here\nMove along please</string>
+
+    <!--Delete message feedback-->
+    <string name="failed_delete_message">Failed to delete this message.</string>
+    <string name="retry">Retry</string>
+</resources>
