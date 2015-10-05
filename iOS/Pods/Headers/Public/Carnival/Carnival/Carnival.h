@@ -1,0 +1,1 @@
+../../../../Carnival/Carnival.embeddedframework/Carnival.framework/Versions/A/Headers/Carnival.h

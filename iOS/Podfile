@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+workspace 'CarnivalStreamExamples.xcworkspace'
+xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
+xcodeproj 'CarnivalStreamExamples/CarnivalStreamExamples.xcodeproj'
+
+target :CarnivalSwiftStreamExamples, :exclusive => true do
+    platform :ios, "7.0"
+    pod "Carnival"
+    pod "SDWebImage"
+    pod "DateTools"
+    xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
+end
+
+target :CarnivalStreamExamples, :exclusive => true do
+    platform :ios, "7.0"
+    pod "Carnival"
+    pod "SDWebImage"
+    pod "DateTools"
+    xcodeproj 'CarnivalStreamExamples/CarnivalStreamExamples.xcodeproj'
+end

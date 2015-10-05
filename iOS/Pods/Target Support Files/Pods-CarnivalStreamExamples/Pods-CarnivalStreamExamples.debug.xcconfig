@@ -1,0 +1,6 @@
+FRAMEWORK_SEARCH_PATHS = "$(PODS_ROOT)/Carnival/**" "$(PODS_ROOT)/Carnival/**" "$(PODS_ROOT)/Carnival/Carnival.embeddedframework"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Carnival" "${PODS_ROOT}/Headers/Public/Carnival/Carnival" "${PODS_ROOT}/Headers/Public/DateTools" "${PODS_ROOT}/Headers/Public/SDWebImage"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Carnival" -isystem "${PODS_ROOT}/Headers/Public/Carnival/Carnival" -isystem "${PODS_ROOT}/Headers/Public/DateTools" -isystem "${PODS_ROOT}/Headers/Public/SDWebImage"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"DateTools" -l"SDWebImage" -framework "AVFoundation" -framework "Carnival" -framework "CoreGraphics" -framework "CoreLocation" -framework "Foundation" -framework "ImageIO" -framework "MediaPlayer" -framework "QuartzCore" -framework "UIKit"
+PODS_ROOT = ${SRCROOT}/../Pods

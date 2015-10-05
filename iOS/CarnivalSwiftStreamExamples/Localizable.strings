@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  CarnivalStreamExamples
+
+  Created by Sam Jarman on 15/09/15.
+  Copyright (c) 2015 Carnival Mobile. All rights reserved.
+*/
+
+
+/* Message Types */
+
+"Image" = "Image";
+"Video" = "Video";
+"Call" = "Call";
+"Link" = "Link";
+"Text" = "Text";
+"Other" = "Other";
+
+/* Message Count */
+"1 MESSAGE" = "1 MESSAGE"; //Singular
+"\(self.messages.count) MESSAGES" = "%lu MESSAGES"; //Plural
+
+/* Actions */
+"Delete" = "Delete";
+
+
+/* Error Messages */
+"You have no messages" = "You have no messages"; // No messages for that user.
+"Failed to get messages" = "Failed to get messages"; // Network error, etc
+
+/* UI Elements */
+"Unread" = "Unread";
+"Messages" = "Messages";

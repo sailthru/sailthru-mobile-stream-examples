@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "200B07313962EF2B2D29AF68304880560B00C63D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "200B07313962EF2B2D29AF68304880560B00C63D" : 0,
+    "1D11766CB0602F321D313B74EF3A5964D8A491A4" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1D5B810C-C794-442F-851E-A94F5CFE45BB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "200B07313962EF2B2D29AF68304880560B00C63D" : "carnival-ios-examples-source",
+    "1D11766CB0602F321D313B74EF3A5964D8A491A4" : "carnival-ios-examples"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CarnivalStreamExamples",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CarnivalStreamExamples.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/carnivalmobile\/carnival-ios-examples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D11766CB0602F321D313B74EF3A5964D8A491A4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/carnivalmobile\/carnival-ios-examples-source.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "200B07313962EF2B2D29AF68304880560B00C63D"
+    }
+  ]
+}
