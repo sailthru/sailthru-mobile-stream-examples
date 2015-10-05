@@ -2,9 +2,9 @@
 This repo contains a sample project with several examples of possible custom message streams. The point of these examples is to be copied into your own project and modified to suit the look and feel of the application.
 
 ## Requirements
-These projects require iOS 8.0+. The examples are provided in both Swift 1.2 and Objective-C.
+These projects require iOS 8.0+. The examples are provided in both Swift 2.X and Objective-C.
 
-Note: for users of Swift 2.X, please look at the [Swift 2.X Branch](#)
+Need Swift 1.2 Code? Please [get in touch](support@carnival.io).
 
 ## Dependencies
 This project uses [CocoaPods](cocoapods.org). The list of pods in use is viewable in the Podfile. You'll need to copy those into your own Podfile when copying the files across to your project. Don't forget to run `pod install` after this. 
