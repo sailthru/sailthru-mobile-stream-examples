@@ -11,6 +11,6 @@ public class NativeStreamApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Carnival.setNotificationIcon(R.drawable.ic_stat_default);
-        Carnival.startEngine(this, "", "4c60e83bc3223dfe5ed47f42581d318fc5dc2898");
+        Carnival.startEngine(this, "", "f0f9e7185392a99a09403d9dc000ed35b1758794");
     }
 }
