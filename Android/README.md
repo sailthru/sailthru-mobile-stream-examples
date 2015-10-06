@@ -36,45 +36,51 @@ The native streams use Android's [Data Binding Library](https://developer.androi
 
 To set up your application to use data binding, add data binding to the class path of your top-level `build.gradle` file, right below the gradle classpath.
 
-    #!groovy
+    ```groovy
     dependencies {
        classpath "com.android.tools.build:gradle:1.3.0"
        classpath "com.android.databinding:dataBinder:1.0-rc1"
     }
+    ```
 
 Make sure jcenter is in the repositories list for your projects in the top-level `build.gradle` file.
 
-    #!groovy
+    ```groovy
     allprojects {
        repositories {
            jcenter()
        }
     }
+    ```
 
 In your application's `build.gradle` apply the data binding plugin right after the android plugin.
 
-    #!groovy
+    ```groovy
     apply plugin: 'com.android.application'
     apply plugin: 'com.android.databinding'
+    ```
 
 Because the native stream uses a [ToolBar](https://developer.android.com/reference/android/widget/Toolbar.html), the activity needs to be defined without an ActionBar. If you don't have a `NoActionBar` theme defined in your `styles.xml` already, you can define it as below.
 
-    #!xml
+    ```xml
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+    ```
 
 Once you've defined the theme, apply it to the Message Stream Activity in your manifest.
     
-    #!xml
+    ```xml
     <activity android:name="com.carnivalmobile.stream.standard.TileStreamActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+    ```
 
 That's the setup done for the Carnival Stream Module, now it can be called like any other activity in your application.
 
-    #!java
+    ```java
     public void foo(View v) {
       Intent i = new Intent(this, TileStreamActivity.class);
       startActivity(i);
     }
+    ```
