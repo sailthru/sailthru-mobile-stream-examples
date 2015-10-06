@@ -1,4 +1,4 @@
-# Carnival Message Stream Example
+# Carnival Message Stream Example (Android)
 This repo contains a sample project with a custom message stream based on Android's Material Design concepts.
 The point of these examples is to be copied into your own project and modified to suit the
 look and feel of the application.
