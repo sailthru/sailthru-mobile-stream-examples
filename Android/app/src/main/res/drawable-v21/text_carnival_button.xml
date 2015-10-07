@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:color="@android:color/white" android:state_pressed="true">
+    <set>
+        <objectAnimator android:propertyName="textColor"
+            android:duration="600"
+            android:valueFrom="@color/primary_dark"
+            android:valueTo="@android:color/white"
+            android:valueType="intType"/>
+        <!-- you could have other objectAnimator elements
+             here for "x" and "y", or other properties -->
+    </set>
+</item>
+<item android:color="@color/primary_dark" android:state_pressed="false">
+    <set>
+        <objectAnimator android:propertyName="textColor"
+            android:duration="0"
+            android:valueTo="@color/primary_dark"
+            android:valueType="intType"/>
+    </set>
+</item>
+</selector>

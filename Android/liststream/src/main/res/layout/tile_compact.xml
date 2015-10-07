@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="message" type="com.carnival.sdk.Message"/>
+        <variable name="relativeTime" type="String"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:clipChildren="false"
+        android:paddingBottom="1dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginLeft="@dimen/tile_margin_horizontal"
+            android:layout_marginRight="@dimen/tile_margin_horizontal"
+            android:clipChildren="false"
+            card_view:cardCornerRadius="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mediaImageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:scaleType="centerCrop"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/bg_tile_gradient"/>
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="18dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/tile_title_color"
+                    android:text="@{message.title}"
+                    android:lines="2"
+                    android:ellipsize="end"
+                    android:layout_toRightOf="@+id/mediaImageView"
+                    android:layout_toEndOf="@+id/mediaImageView"/>
+
+                <TextView
+                    android:id="@+id/typeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginBottom="18dp"
+                    android:textColor="@color/tile_meta_color"
+                    android:textSize="12sp"
+                    android:text="Image"
+                    android:drawableStart="@drawable/ic_meta_camera"
+                    android:drawableLeft="@drawable/ic_meta_camera"
+                    android:drawablePadding="5dp"
+                    android:layout_toRightOf="@+id/mediaImageView"
+                    android:layout_toEndOf="@+id/mediaImageView"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/dividerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="•"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/tile_meta_color"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/typeTextView"
+                    android:layout_toEndOf="@+id/typeTextView"
+                    android:layout_alignBaseline="@+id/typeTextView"/>
+
+                <TextView
+                    android:id="@+id/timeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12sp"
+                    android:text="@{relativeTime}"
+                    android:textColor="@color/tile_meta_color"
+                    android:drawableStart="@drawable/ic_meta_time"
+                    android:drawableLeft="@drawable/ic_meta_time"
+                    android:drawablePadding="5dp"
+                    android:layout_toRightOf="@+id/dividerTextView"
+                    android:layout_toEndOf="@+id/dividerTextView"
+                    android:layout_alignBaseline="@+id/typeTextView"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical"
+                    />
+
+                <TextView
+                    android:id="@+id/unread_indicator_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Unread"
+                    android:textSize="11sp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_tile_unread"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBaseline="@+id/typeTextView"/>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?android:attr/selectableItemBackground"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+
+</layout>

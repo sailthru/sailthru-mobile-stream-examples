@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Message cell Strings-->
+    <string name="unread">Não Lido</string>
+    <string name="image">Imagem</string>
+    <string name="video">Vídeo</string>
+    <string name="link">Link</string>
+    <string name="call">Chamada</string>
+    <string name="text">Texto</string>
+
+    <!--Messages loading feedback-->
+    <string name="get_message_failed">Falha ao listar mensagens</string>
+    <string name="no_messages">Nenhuma mensagem disponível</string>
+
+    <!--Delete message feedback-->
+    <string name="failed_delete_message">Falha ao deletar mensagem.</string>
+    <string name="retry">Tentar novamente</string>
+</resources>
