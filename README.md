@@ -17,3 +17,7 @@ If you customise the examples in a big way, please comit them back to the app so
 
 ## Docs and Support
 Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@carnival.io](support@carnival.io).
+
+## Libraries Used
+For iOS, we use [SDWebImage](https://github.com/rs/SDWebImage) and [DateTools](https://github.com/MatthewYork/DateTools). 
+For Android, we use [Swipeable Recycler View](https://github.com/brnunes/SwipeableRecyclerView) and [Picasso](https://github.com/square/picasso) with **no** changes. 
