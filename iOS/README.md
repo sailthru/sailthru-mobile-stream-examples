@@ -19,6 +19,7 @@ Both Example projects contains 2 streams.
 To install, simply copy the files across to your project. Update your Podfile with the Pods we rely on. For Swift projects, also update your bridging header file. 
 
 List Stream Example: 
+
 1. Copy `BasicListStreamTableViewCell`, `ListStreamViewController`, `ScreenSizeHelper` (.h/.m or .swift) into your project.
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
