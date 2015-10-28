@@ -26,6 +26,7 @@ List Stream Example:
 
 
 Graphic Stream Example: 
+
 1. Copy all files in `Graphic Cards Example` and `ScreenSizeHelper` (.h/.m or .swift) into your project.
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
