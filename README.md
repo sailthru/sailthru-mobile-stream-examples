@@ -23,7 +23,7 @@ For iOS, we use [SDWebImage](https://github.com/rs/SDWebImage) and [DateTools](h
 For Android, we use [Swipeable Recycler View](https://github.com/brnunes/SwipeableRecyclerView) and [Picasso](https://github.com/square/picasso) with **no** changes. 
 
 ## License
-Copyright (C) 2015  Carnival Inc.
+Copyright (C) 2015, Carnival, Inc.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
