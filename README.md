@@ -11,9 +11,9 @@ Alternatively, you can use these samples to learn more about how you'd build you
 For specifics for iOS and Android, see their respective READMEs. ([iOS](https://github.com/carnivalmobile/carnival-stream-examples/tree/master/iOS) | [Android](https://github.com/carnivalmobile/carnival-stream-examples/tree/master/Android))
 
 ## Contributing
-These examples are fully open source! If you'd like to suggest an improvement, make an improvement or report and issue - please do! We'll review them ASAP and get back to you. 
+These examples are fully open source. If you'd like to suggest an improvement, make an improvement or report and issue - please do! We'll review them ASAP and get back to you. 
 
-If you customise the examples in a big way, please comit them back to the app so others can benefit too. 
+If you customize the examples in a big way, please commit them back to the app so others can benefit too. 
 
 ## Docs and Support
 Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@carnival.io](support@carnival.io).
