@@ -4,5 +4,5 @@
 
     <!--Messages loading feedback-->
     <string name="get_message_failed">Failed to get Messages</string>
-    <string name="no_messages">Nothing to see here\nMove along please</string>
+    <string name="no_messages">You have no Messages</string>
 </resources>

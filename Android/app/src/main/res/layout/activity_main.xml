@@ -95,8 +95,6 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_below="@+id/button_card"/>
 
-        <!--android:stateListAnimator="@drawable/text_carnival_button"-->
-
     </RelativeLayout>
 
 </RelativeLayout>

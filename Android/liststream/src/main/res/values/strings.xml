@@ -9,7 +9,7 @@
 
     <!--Messages loading feedback-->
     <string name="get_message_failed">Failed to get Messages</string>
-    <string name="no_messages">Nothing to see here\nMove along please</string>
+    <string name="no_messages">You have no Messages</string>
 
     <!--Delete message feedback-->
     <string name="failed_delete_message">Failed to delete this message.</string>
