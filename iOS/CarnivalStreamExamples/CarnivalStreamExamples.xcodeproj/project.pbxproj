@@ -7,23 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2237D8EE1BDF197000700605 /* StandardExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237D8ED1BDF197000700605 /* StandardExampleViewController.m */; };
+		2237D8F41BDF1DA000700605 /* StandardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */; };
 		225C7B251B9D4009000CC025 /* CarnivalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B241B9D4009000CC025 /* CarnivalLabel.m */; };
 		225C7B2B1B9E49F9000CC025 /* ListStreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B2A1B9E49F9000CC025 /* ListStreamTableViewCell.m */; };
 		225C7B2F1B9F92ED000CC025 /* GraphicalCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B2E1B9F92ED000CC025 /* GraphicalCardsViewController.m */; };
 		225C7B321B9F96DC000CC025 /* GraphicalCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B311B9F96DC000CC025 /* GraphicalCardTableViewCell.m */; };
 		225C7B351B9F96ED000CC025 /* TextCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */; };
 		22BD55131B74458500BDDD86 /* ListStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD55121B74458500BDDD86 /* ListStreamViewController.m */; };
+		22C325661BFA838800CC37D0 /* CardExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C325631BFA838800CC37D0 /* CardExampleViewController.m */; };
+		22C325671BFA838800CC37D0 /* CardExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */; };
 		22CB31761BA78CC100F1E60D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22CB31751BA78CC100F1E60D /* Localizable.strings */; };
 		22CC19191B7324D600368642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC19181B7324D600368642 /* main.m */; };
 		22CC191C1B7324D600368642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC191B1B7324D600368642 /* AppDelegate.m */; };
 		22CC19221B7324D600368642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19201B7324D600368642 /* Main.storyboard */; };
 		22CC19241B7324D600368642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19231B7324D600368642 /* Images.xcassets */; };
 		22CC19271B7324D600368642 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19251B7324D600368642 /* LaunchScreen.xib */; };
+		22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB2DB01C166BEF00114ECD /* HomeViewController.m */; };
 		666B255D1BABD1900011C283 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B255C1BABD1900011C283 /* RoundedButton.m */; };
 		A51D942164D3B89C953EF182 /* libPods-CarnivalStreamExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958CB4E12A1A3D0FC7374C82 /* libPods-CarnivalStreamExamples.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2237D8EC1BDF197000700605 /* StandardExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardExampleViewController.h; sourceTree = "<group>"; };
+		2237D8ED1BDF197000700605 /* StandardExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardExampleViewController.m; sourceTree = "<group>"; };
+		2237D8F21BDF1DA000700605 /* StandardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardTableViewCell.h; sourceTree = "<group>"; };
+		2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardTableViewCell.m; sourceTree = "<group>"; };
 		225C7B231B9D4009000CC025 /* CarnivalLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarnivalLabel.h; sourceTree = "<group>"; };
 		225C7B241B9D4009000CC025 /* CarnivalLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarnivalLabel.m; sourceTree = "<group>"; };
 		225C7B291B9E49F9000CC025 /* ListStreamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListStreamTableViewCell.h; sourceTree = "<group>"; };
@@ -36,7 +45,11 @@
 		225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardTableViewCell.m; sourceTree = "<group>"; };
 		22BD55111B74458500BDDD86 /* ListStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListStreamViewController.h; sourceTree = "<group>"; };
 		22BD55121B74458500BDDD86 /* ListStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListStreamViewController.m; sourceTree = "<group>"; };
-		22CB31751BA78CC100F1E60D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = CarnivalStreamExamples/Localizable.strings; sourceTree = "<group>"; };
+		22C325621BFA838800CC37D0 /* CardExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExampleViewController.h; sourceTree = "<group>"; };
+		22C325631BFA838800CC37D0 /* CardExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExampleViewController.m; sourceTree = "<group>"; };
+		22C325641BFA838800CC37D0 /* CardExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExampleTableViewCell.h; sourceTree = "<group>"; };
+		22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExampleTableViewCell.m; sourceTree = "<group>"; };
+		22CB31751BA78CC100F1E60D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		22CC19131B7324D600368642 /* CarnivalStreamExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarnivalStreamExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CC19171B7324D600368642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CC19181B7324D600368642 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,6 +58,8 @@
 		22CC19211B7324D600368642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22CC19231B7324D600368642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22CC19261B7324D600368642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		22EB2DAF1C166BEF00114ECD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		22EB2DB01C166BEF00114ECD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		382924403C48105ECF28C421 /* Pods-CarnivalStreamExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarnivalStreamExamples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples.release.xcconfig"; sourceTree = "<group>"; };
 		666B255B1BABD1900011C283 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
 		666B255C1BABD1900011C283 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
@@ -79,8 +94,6 @@
 			children = (
 				225C7B231B9D4009000CC025 /* CarnivalLabel.h */,
 				225C7B241B9D4009000CC025 /* CarnivalLabel.m */,
-				666B255B1BABD1900011C283 /* RoundedButton.h */,
-				666B255C1BABD1900011C283 /* RoundedButton.m */,
 				225C7B331B9F96EC000CC025 /* TextCardTableViewCell.h */,
 				225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */,
 				225C7B301B9F96DC000CC025 /* GraphicalCardTableViewCell.h */,
@@ -89,6 +102,42 @@
 				225C7B2E1B9F92ED000CC025 /* GraphicalCardsViewController.m */,
 			);
 			name = "Graphical Cards Example";
+			sourceTree = "<group>";
+		};
+		228D47081C20E80100D16AF4 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				22CC19201B7324D600368642 /* Main.storyboard */,
+				22CC19231B7324D600368642 /* Images.xcassets */,
+				22CC19251B7324D600368642 /* LaunchScreen.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		228D47091C20E80A00D16AF4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				22EB2DAF1C166BEF00114ECD /* HomeViewController.h */,
+				22EB2DB01C166BEF00114ECD /* HomeViewController.m */,
+				22CC191A1B7324D600368642 /* AppDelegate.h */,
+				22CC191B1B7324D600368642 /* AppDelegate.m */,
+				66E8BC3C1BB013A700E7DC2B /* ScreenSizeHelper.h */,
+				666B255B1BABD1900011C283 /* RoundedButton.h */,
+				666B255C1BABD1900011C283 /* RoundedButton.m */,
+				22CB31751BA78CC100F1E60D /* Localizable.strings */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		22915EFA1BDF087600F852EB /* Standard Example */ = {
+			isa = PBXGroup;
+			children = (
+				2237D8EC1BDF197000700605 /* StandardExampleViewController.h */,
+				2237D8ED1BDF197000700605 /* StandardExampleViewController.m */,
+				2237D8F21BDF1DA000700605 /* StandardTableViewCell.h */,
+				2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */,
+			);
+			name = "Standard Example";
 			sourceTree = "<group>";
 		};
 		22BD55141B74458900BDDD86 /* List Example */ = {
@@ -102,10 +151,20 @@
 			name = "List Example";
 			sourceTree = "<group>";
 		};
+		22C325611BFA836400CC37D0 /* Card Example */ = {
+			isa = PBXGroup;
+			children = (
+				22C325621BFA838800CC37D0 /* CardExampleViewController.h */,
+				22C325631BFA838800CC37D0 /* CardExampleViewController.m */,
+				22C325641BFA838800CC37D0 /* CardExampleTableViewCell.h */,
+				22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */,
+			);
+			name = "Card Example";
+			sourceTree = "<group>";
+		};
 		22CC190A1B7324D600368642 = {
 			isa = PBXGroup;
 			children = (
-				22CB31751BA78CC100F1E60D /* Localizable.strings */,
 				22CC19151B7324D600368642 /* CarnivalStreamExamples */,
 				22CC19141B7324D600368642 /* Products */,
 				15BA08B6ABB73D4BCA7210C2 /* Pods */,
@@ -124,15 +183,12 @@
 		22CC19151B7324D600368642 /* CarnivalStreamExamples */ = {
 			isa = PBXGroup;
 			children = (
-				66C93AE61BAF6C2900DC83F2 /* Resources */,
-				22CC191A1B7324D600368642 /* AppDelegate.h */,
-				22CC191B1B7324D600368642 /* AppDelegate.m */,
-				66E8BC3C1BB013A700E7DC2B /* ScreenSizeHelper.h */,
-				22CC19201B7324D600368642 /* Main.storyboard */,
-				22CC19231B7324D600368642 /* Images.xcassets */,
-				22CC19251B7324D600368642 /* LaunchScreen.xib */,
-				225C7B2C1B9F9295000CC025 /* Graphical Cards Example */,
+				228D47081C20E80100D16AF4 /* User Interface */,
+				228D47091C20E80A00D16AF4 /* Misc */,
 				22BD55141B74458900BDDD86 /* List Example */,
+				225C7B2C1B9F9295000CC025 /* Graphical Cards Example */,
+				22915EFA1BDF087600F852EB /* Standard Example */,
+				22C325611BFA836400CC37D0 /* Card Example */,
 				22CC19161B7324D600368642 /* Supporting Files */,
 			);
 			path = CarnivalStreamExamples;
@@ -145,13 +201,6 @@
 				22CC19181B7324D600368642 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		66C93AE61BAF6C2900DC83F2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		DE9747D376F65A2C4B5FA8D9 /* Frameworks */ = {
@@ -174,7 +223,6 @@
 				22CC19101B7324D600368642 /* Frameworks */,
 				22CC19111B7324D600368642 /* Resources */,
 				17CF3658319861ECF4AF6A8F /* Copy Pods Resources */,
-				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 			);
 			buildRules = (
 			);
@@ -263,20 +311,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Objective-Clean Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\" \nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\" \nfi\nfi";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -287,10 +321,15 @@
 				225C7B2B1B9E49F9000CC025 /* ListStreamTableViewCell.m in Sources */,
 				22CC191C1B7324D600368642 /* AppDelegate.m in Sources */,
 				22BD55131B74458500BDDD86 /* ListStreamViewController.m in Sources */,
+				2237D8F41BDF1DA000700605 /* StandardTableViewCell.m in Sources */,
 				225C7B251B9D4009000CC025 /* CarnivalLabel.m in Sources */,
+				22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */,
 				666B255D1BABD1900011C283 /* RoundedButton.m in Sources */,
+				22C325661BFA838800CC37D0 /* CardExampleViewController.m in Sources */,
 				225C7B2F1B9F92ED000CC025 /* GraphicalCardsViewController.m in Sources */,
+				2237D8EE1BDF197000700605 /* StandardExampleViewController.m in Sources */,
 				22CC19191B7324D600368642 /* main.m in Sources */,
+				22C325671BFA838800CC37D0 /* CardExampleTableViewCell.m in Sources */,
 				225C7B351B9F96ED000CC025 /* TextCardTableViewCell.m in Sources */,
 				225C7B321B9F96DC000CC025 /* GraphicalCardTableViewCell.m in Sources */,
 			);

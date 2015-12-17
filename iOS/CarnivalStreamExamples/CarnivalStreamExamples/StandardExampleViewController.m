@@ -1,28 +1,28 @@
 //
-//  GraphicalCardsViewController.m
+//  StandardExampleViewController.m
 //  CarnivalStreamExamples
 //
-//  Created by Sam Jarman on 9/09/15.
-//  Copyright (c) 2015 Carnival Mobile. All rights reserved.
+//  Created by Sam Jarman on 27/10/15.
+//  Copyright © 2015 Carnival Mobile. All rights reserved.
 //
 
-#import "GraphicalCardsViewController.h"
-#import "GraphicalCardTableViewCell.h"
-#import "TextCardTableViewCell.h"
+#import "StandardExampleViewController.h"
+#import "StandardTableViewCell.h"
 
 /* Cocoa Pod dependencies – Visit cocoapods.org to get started. */
 #import <Carnival/Carnival.h>
 
-@interface GraphicalCardsViewController ()
+@interface StandardExampleViewController ()
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @property (weak, nonatomic) IBOutlet UILabel *emptyDataLabel;
+@property (strong, nonatomic) NSMutableArray *rowHeightCache;
 
 @end
 
-@implementation GraphicalCardsViewController
+@implementation StandardExampleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,55 +60,74 @@
     return self.messages.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Get the message
-    CarnivalMessage *message = [self.messages objectAtIndex:indexPath.row];
-    //Create a stream impression on the message
-    [CarnivalMessageStream registerImpressionWithType:CarnivalImpressionTypeStreamView forMessage:message];
-    
-    if (message.imageURL || message.videoURL) {
-        GraphicalCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[GraphicalCardTableViewCell cellIndentifier] forIndexPath:indexPath];
-        return cell;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ([self.messages count] > 0) {
+        //Define and configure the header view
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,tableView.frame.size.width, 40)];
+        
+        //Define and configure the label
+        UILabel *messagesLabel = [[UILabel alloc] initWithFrame:CGRectMake(14, 0, tableView.frame.size.width, 40)];
+        if (self.messages.count == 1) {
+            messagesLabel.text = NSLocalizedString(@"1 MESSAGE", nil);
+        }
+        else {
+            messagesLabel.text = [NSString stringWithFormat:NSLocalizedString(@"%lu MESSAGES", nil), (unsigned long)self.messages.count];
+        }
+        messagesLabel.font = [UIFont systemFontOfSize:12];
+        messagesLabel.textColor = [UIColor colorWithRed:112.0/255.0 green:107.0/255.0 blue:107.0/255.0 alpha:1];
+        
+        //Add the label to the header view and return it
+        [headerView addSubview:messagesLabel];
+        return headerView;
     }
     else {
-        TextCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TextCardTableViewCell cellIndentifier] forIndexPath:indexPath];
-        return cell;
+        return nil;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView dequeueReusableCellWithIdentifier:[StandardTableViewCell cellIndentifier] forIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(id)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //Get the message
     CarnivalMessage *message = [self.messages objectAtIndex:indexPath.row];
     
+    //Configure the Message
     [cell configureCellWithMessage:message];
+    
+    //Create a stream impression on the message
+    [CarnivalMessageStream registerImpressionWithType:CarnivalImpressionTypeStreamView forMessage:message];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CarnivalMessage *message = [self.messages objectAtIndex:indexPath.row];
-    if (message.imageURL || message.videoURL) {
-        return [self heightForImageCellAtIndexPath:indexPath];
+    if ([self.rowHeightCache objectAtIndex:indexPath.row] != [NSNull null]) {
+        return [[self.rowHeightCache objectAtIndex:indexPath.row] floatValue];
     }
-    return [self heightForTextCellAtIndexPath:indexPath];
+    
+    CGFloat height = [self heightForCellAtIndexPath:indexPath];
+    
+    [self.rowHeightCache setObject:@(height) atIndexedSubscript:indexPath.row];
+    
+    return height;
 }
 
-- (CGFloat)heightForTextCellAtIndexPath:(NSIndexPath *)indexPath {
-    TextCardTableViewCell *sizingCell = [self.tableView dequeueReusableCellWithIdentifier:[TextCardTableViewCell cellIndentifier]];
+- (CGFloat)heightForCellAtIndexPath:(NSIndexPath *)indexPath {
+    StandardTableViewCell *sizingCell = [self.tableView dequeueReusableCellWithIdentifier:[StandardTableViewCell cellIndentifier]];
     [sizingCell configureCellWithMessage:[self.messages objectAtIndex:indexPath.row]];
     return [self calculateHeightForConfiguredSizingCell:sizingCell];
 }
 
-- (CGFloat)heightForImageCellAtIndexPath:(NSIndexPath *)indexPath {
-    float width = self.view.bounds.size.width;
-    return width * (3.0/5.0) + 1.0f; // Add 1.0f for the cell seperator height
-}
-
 - (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-
-    sizingCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds));
-
+    sizingCell.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.frame));
+    
     [sizingCell setNeedsLayout];
     [sizingCell layoutIfNeeded];
-
+    
     CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height + 1.0f; // Add 1.0f for the cell separator height
 }
@@ -123,7 +142,6 @@
 
 - (void)fetchLatestMessages {
     [CarnivalMessageStream messages:^(NSArray *messages, NSError *error) {
-        
         if (error) {
             NSLog(@"Error getting messages - %@", error.localizedDescription);
             self.emptyDataLabel.text = NSLocalizedString(@"Failed to get messages", nil);
@@ -133,6 +151,7 @@
             self.messages = [NSMutableArray arrayWithArray:messages];
             self.emptyDataLabel.text = NSLocalizedString(@"You have no messages", nil);
             self.tableView.hidden = self.messages.count == 0;
+            self.rowHeightCache = [self emptyArrayOfSize:self.messages.count];
             [self.tableView reloadData];
         }
         
@@ -156,11 +175,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
-}
-
-#pragma mark - Navigation Bar & Status Bar
+#pragma mark - Navigation Bar and Status Bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -168,6 +183,25 @@
 
 - (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
     return UIBarPositionTopAttached;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    //Invalidate the heights cache
+    self.rowHeightCache = [self emptyArrayOfSize:self.messages.count];
+    
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
+
+#pragma mark - Empty Array Helper
+
+- (NSMutableArray *)emptyArrayOfSize:(NSInteger)size {
+    NSMutableArray *newArray = [NSMutableArray arrayWithCapacity:size];
+    
+    for (int i = 0; i < size; i ++) {
+        [newArray addObject:[NSNull null]];
+    }
+    
+    return newArray;
 }
 
 @end

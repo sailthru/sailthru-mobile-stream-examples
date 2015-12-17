@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2214786B1BA28F93001FC4BB /* ListStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214786A1BA28F93001FC4BB /* ListStreamViewController.swift */; };
 		22193E4E1BA632690074CFE8 /* BasicListStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22193E4D1BA632690074CFE8 /* BasicListStreamTableViewCell.swift */; };
+		221D88301C1FBBC000E37C7E /* CardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221D882F1C1FBBC000E37C7E /* CardExampleViewController.swift */; };
+		221D88321C1FBBE100E37C7E /* CardExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221D88311C1FBBE100E37C7E /* CardExampleTableViewCell.swift */; };
+		222F51101C1E61870090542C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F510F1C1E61870090542C /* HomeViewController.swift */; };
+		2278F8341C1E4E2100D827B8 /* StandardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278F8331C1E4E2100D827B8 /* StandardExampleViewController.swift */; };
+		2278F8361C1E573E00D827B8 /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278F8351C1E573E00D827B8 /* StandardTableViewCell.swift */; };
 		22B433651B7803FE00F4A1DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B433641B7803FE00F4A1DE /* AppDelegate.swift */; };
 		22B4336A1B7803FE00F4A1DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B433681B7803FE00F4A1DE /* Main.storyboard */; };
 		22B4336C1B7803FE00F4A1DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4336B1B7803FE00F4A1DE /* Images.xcassets */; };
@@ -27,6 +32,11 @@
 		21A11E1E3C3B1401515335AB /* Pods-CarnivalSwiftStreamExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarnivalSwiftStreamExamples.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples.debug.xcconfig"; sourceTree = "<group>"; };
 		2214786A1BA28F93001FC4BB /* ListStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListStreamViewController.swift; sourceTree = "<group>"; };
 		22193E4D1BA632690074CFE8 /* BasicListStreamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicListStreamTableViewCell.swift; sourceTree = "<group>"; };
+		221D882F1C1FBBC000E37C7E /* CardExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExampleViewController.swift; sourceTree = "<group>"; };
+		221D88311C1FBBE100E37C7E /* CardExampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExampleTableViewCell.swift; sourceTree = "<group>"; };
+		222F510F1C1E61870090542C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2278F8331C1E4E2100D827B8 /* StandardExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardExampleViewController.swift; sourceTree = "<group>"; };
+		2278F8351C1E573E00D827B8 /* StandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
 		22B4335F1B7803FE00F4A1DE /* CarnivalSwiftStreamExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarnivalSwiftStreamExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B433631B7803FE00F4A1DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B433641B7803FE00F4A1DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +48,7 @@
 		22CB316F1BA67CFC00F1E60D /* GraphicalCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicalCardTableViewCell.swift; sourceTree = "<group>"; };
 		22CB31711BA67D0800F1E60D /* TextCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCardTableViewCell.swift; sourceTree = "<group>"; };
 		22CB31731BA6870300F1E60D /* CarnivalLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarnivalLabel.swift; sourceTree = "<group>"; };
-		22CB31771BA7949000F1E60D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		22CB31771BA7949000F1E60D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
 		22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSizeHelper.swift; sourceTree = "<group>"; };
 		22FED0D31BBCE01F005792D9 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7E610055042D4238FCA7C7A5 /* Pods-CarnivalSwiftStreamExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarnivalSwiftStreamExamples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,8 +73,6 @@
 				22CB31711BA67D0800F1E60D /* TextCardTableViewCell.swift */,
 				22CB316F1BA67CFC00F1E60D /* GraphicalCardTableViewCell.swift */,
 				22CB316D1BA6782700F1E60D /* GraphicalCardsViewController.swift */,
-				22CB31731BA6870300F1E60D /* CarnivalLabel.swift */,
-				22FED0D31BBCE01F005792D9 /* RoundedButton.swift */,
 			);
 			name = "Graphic Cards Example";
 			sourceTree = "<group>";
@@ -78,10 +86,51 @@
 			name = "List Example";
 			sourceTree = "<group>";
 		};
-		22B433561B7803FE00F4A1DE = {
+		222F510D1C1E61020090542C /* Misc */ = {
 			isa = PBXGroup;
 			children = (
 				22CB31771BA7949000F1E60D /* Localizable.strings */,
+				22CB31731BA6870300F1E60D /* CarnivalLabel.swift */,
+				22FED0D31BBCE01F005792D9 /* RoundedButton.swift */,
+				22B433841B7808B400F4A1DE /* CarnivalSwiftStreamExamples-Bridging-Header.h */,
+				222F510F1C1E61870090542C /* HomeViewController.swift */,
+				22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */,
+				22B433641B7803FE00F4A1DE /* AppDelegate.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		222F510E1C1E61150090542C /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				22B433681B7803FE00F4A1DE /* Main.storyboard */,
+				22B4336B1B7803FE00F4A1DE /* Images.xcassets */,
+				22B4336D1B7803FE00F4A1DE /* LaunchScreen.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		2278F8311C1E33E600D827B8 /* Card Example */ = {
+			isa = PBXGroup;
+			children = (
+				221D882F1C1FBBC000E37C7E /* CardExampleViewController.swift */,
+				221D88311C1FBBE100E37C7E /* CardExampleTableViewCell.swift */,
+			);
+			name = "Card Example";
+			sourceTree = "<group>";
+		};
+		2278F8321C1E33F200D827B8 /* Standard Example */ = {
+			isa = PBXGroup;
+			children = (
+				2278F8331C1E4E2100D827B8 /* StandardExampleViewController.swift */,
+				2278F8351C1E573E00D827B8 /* StandardTableViewCell.swift */,
+			);
+			name = "Standard Example";
+			sourceTree = "<group>";
+		};
+		22B433561B7803FE00F4A1DE = {
+			isa = PBXGroup;
+			children = (
 				22B433611B7803FE00F4A1DE /* CarnivalSwiftStreamExamples */,
 				22B433601B7803FE00F4A1DE /* Products */,
 				3BE29AA34BAFB0CB9517E4CE /* Pods */,
@@ -100,14 +149,12 @@
 		22B433611B7803FE00F4A1DE /* CarnivalSwiftStreamExamples */ = {
 			isa = PBXGroup;
 			children = (
-				22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */,
-				22B433641B7803FE00F4A1DE /* AppDelegate.swift */,
-				22B433681B7803FE00F4A1DE /* Main.storyboard */,
-				22B4336B1B7803FE00F4A1DE /* Images.xcassets */,
-				22B4336D1B7803FE00F4A1DE /* LaunchScreen.xib */,
-				22B433841B7808B400F4A1DE /* CarnivalSwiftStreamExamples-Bridging-Header.h */,
+				222F510E1C1E61150090542C /* User Interface */,
+				222F510D1C1E61020090542C /* Misc */,
 				221478691BA28E02001FC4BB /* List Example */,
 				221478681BA28DF3001FC4BB /* Graphic Cards Example */,
+				2278F8321C1E33F200D827B8 /* Standard Example */,
+				2278F8311C1E33E600D827B8 /* Card Example */,
 				22B433621B7803FE00F4A1DE /* Supporting Files */,
 			);
 			path = CarnivalSwiftStreamExamples;
@@ -173,6 +220,12 @@
 				TargetAttributes = {
 					22B4335E1B7803FE00F4A1DE = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 9ZEH62KRVF;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -248,13 +301,18 @@
 			files = (
 				22CB31721BA67D0800F1E60D /* TextCardTableViewCell.swift in Sources */,
 				22B433651B7803FE00F4A1DE /* AppDelegate.swift in Sources */,
+				2278F8361C1E573E00D827B8 /* StandardTableViewCell.swift in Sources */,
 				22193E4E1BA632690074CFE8 /* BasicListStreamTableViewCell.swift in Sources */,
+				221D88321C1FBBE100E37C7E /* CardExampleTableViewCell.swift in Sources */,
 				22CB316E1BA6782700F1E60D /* GraphicalCardsViewController.swift in Sources */,
+				2278F8341C1E4E2100D827B8 /* StandardExampleViewController.swift in Sources */,
 				22FED0D41BBCE01F005792D9 /* RoundedButton.swift in Sources */,
 				22FED0D21BBCDFAC005792D9 /* ScreenSizeHelper.swift in Sources */,
 				2214786B1BA28F93001FC4BB /* ListStreamViewController.swift in Sources */,
 				22CB31741BA6870300F1E60D /* CarnivalLabel.swift in Sources */,
 				22CB31701BA67CFC00F1E60D /* GraphicalCardTableViewCell.swift in Sources */,
+				222F51101C1E61870090542C /* HomeViewController.swift in Sources */,
+				221D88301C1FBBC000E37C7E /* CardExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,11 +390,15 @@
 			baseConfigurationReference = 7E610055042D4238FCA7C7A5 /* Pods-CarnivalSwiftStreamExamples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CarnivalSwiftStreamExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "CarnivalMobile.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -393,11 +455,15 @@
 			baseConfigurationReference = 21A11E1E3C3B1401515335AB /* Pods-CarnivalSwiftStreamExamples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = CarnivalSwiftStreamExamples/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "CarnivalMobile.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};

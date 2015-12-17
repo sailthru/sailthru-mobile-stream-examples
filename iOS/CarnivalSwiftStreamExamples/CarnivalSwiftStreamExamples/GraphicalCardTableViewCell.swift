@@ -19,7 +19,7 @@ class GraphicalCardTableViewCell: TextCardTableViewCell {
     override func configureCell(message: CarnivalMessage) {
         super.configureCell(message)
         if message.imageURL != nil {
-            self.imgView.sd_setImageWithURL(message.imageURL, placeholderImage: UIImage(named:"placeholder_image"))
+            self.imgView.sd_setImageWithURL(message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
             self.imgView.contentMode = UIViewContentMode.ScaleAspectFill
             self.imgView.clipsToBounds = true
         }

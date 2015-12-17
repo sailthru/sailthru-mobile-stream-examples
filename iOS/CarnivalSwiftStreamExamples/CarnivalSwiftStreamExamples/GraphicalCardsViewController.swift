@@ -32,7 +32,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         self.refreshTableView()
     }
     
-    func refreshTableView () {
+    func refreshTableView() {
         self.tableView!.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
         self.refreshControl!.beginRefreshing()
         self.fetchMessages()
@@ -61,30 +61,27 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
     
     func heightForImageCell(indexPath: NSIndexPath) -> CGFloat {
         let width = CGRectGetWidth(self.view.bounds)
-        return width * (3.0/5.0) + 1 //Add 1 for the cell separator
+        
+        return width * (3.0 / 5.0) + 1 //Add 1 for the cell separator
     }
     
     func heightForTextCell(indexPath: NSIndexPath) -> CGFloat {
-        var sizingCell = TextCardTableViewCell()
-        var onceToken: dispatch_once_t = 0
-        dispatch_once(&onceToken) { () -> Void in
-          sizingCell = self.tableView.dequeueReusableCellWithIdentifier(TextCardTableViewCell.cellIdentifier()) as! TextCardTableViewCell
-        }
-        
+        let sizingCell = self.tableView.dequeueReusableCellWithIdentifier(TextCardTableViewCell.cellIdentifier()) as! TextCardTableViewCell
         sizingCell.configureCell(self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage)
+        
         return self.calculateHeightForConfiguredSizingCell(sizingCell)
     }
     
-    func calculateHeightForConfiguredSizingCell(sizingCell:UITableViewCell) -> CGFloat {
+    func calculateHeightForConfiguredSizingCell(sizingCell: UITableViewCell) -> CGFloat {
         sizingCell.bounds = CGRectMake(0.0, 0.0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds))
         
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size:CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        
         return size.height + 1 //Add 1 for the cell separator
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //Get the message
@@ -94,13 +91,14 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         
         if(message.imageURL != nil || message.videoURL != nil) {
             let cell = tableView.dequeueReusableCellWithIdentifier(GraphicalCardTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! GraphicalCardTableViewCell
+            
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(TextCardTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! TextCardTableViewCell
+            
             return cell
         }
-        
     }
     
     //MARK: TableView Delegate Methods
@@ -110,7 +108,6 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         let message  = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
         let aCell = cell as! TextCardTableViewCell
         aCell.configureCell(message)
-        CarnivalMessageStream.registerImpressionWithType(CarnivalImpressionType.StreamView, forMessage: message)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -166,5 +163,4 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
             }
         }
     }
-    
 }

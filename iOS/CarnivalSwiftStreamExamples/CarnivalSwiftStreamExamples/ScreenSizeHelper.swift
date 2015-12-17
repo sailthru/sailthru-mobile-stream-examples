@@ -5,6 +5,7 @@
 //  Created by Sam Jarman on 1/10/15.
 //  Copyright (c) 2015 Carnival Mobile. All rights reserved.
 //
+
 import Foundation
 
 class ScreenSizeHelper: NSObject {

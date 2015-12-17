@@ -47,12 +47,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return self.messages.count;
 }
 
@@ -79,7 +77,6 @@
     else {
         return nil;
     }
-
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -91,14 +88,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     ListStreamTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ListStreamTableViewCell cellIndentifier] forIndexPath:indexPath];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(ListStreamTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     //Get the message
     CarnivalMessage *message = [self.messages objectAtIndex:indexPath.row];
     
@@ -115,6 +110,7 @@
 }
 
 - (IBAction)refreshTableView {
+    [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height) animated: true];
     [self.refreshControl beginRefreshing];
     [self fetchLatestMessages];
 }

@@ -10,23 +10,23 @@ Need Swift 1.2 Code? Please [get in touch](support@carnival.io).
 This project uses [CocoaPods](cocoapods.org). The list of pods in use is viewable in the Podfile. You'll need to copy those into your own Podfile when copying the files across to your project. Don't forget to run `pod install` after this. 
 
 ## Examples
-Both Example projects contains 2 streams. 
+Both Example projects contains 4 streams. 
 
 1. A List Card Example
-2  A Graphical Card Example
+2. A Graphical Card Example
+3. A Standard Example
+4. A Card Example
 
 ## Installation
 To install, simply copy the files across to your project. Update your Podfile with the Pods we rely on. For Swift projects, also update your bridging header file. 
 
 List Stream Example: 
-
 1. Copy `BasicListStreamTableViewCell`, `ListStreamViewController`, `ScreenSizeHelper` (.h/.m or .swift) into your project.
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
 
 
 Graphic Stream Example: 
-
 1. Copy all files in `Graphic Cards Example` and `ScreenSizeHelper` (.h/.m or .swift) into your project.
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
@@ -48,6 +48,9 @@ Feel free to change these for your app.
 
 ### Detail View
 You can either us the defaul detail view (as these examples do) or create your own. 
+
+### Row Height Caching
+We have implemented basic row height caching on the standard and card examples. This technique can be used in any example though, depending on your performance goals. 
 
 ## Contributing
 These examples are fully open source! If you'd like to suggest an improvement, make an improvement or report and issue - please do! We'll review them ASAP and get back to you. 

@@ -41,7 +41,7 @@ class TextCardTableViewCell: UITableViewCell {
         let fontSize = ScreenSizeHelper.isIphone5orLess() ? ScreenSizeHelper.textSmall() : ScreenSizeHelper.textNormal()
         self.unreadLabel.font = UIFont.systemFontOfSize(fontSize)
         self.unreadLabel.hidden = message.read
-        self.unreadLabel.layer.cornerRadius = self.unreadLabel.frame.size.height/2
+        self.unreadLabel.layer.cornerRadius = self.unreadLabel.frame.size.height / 2
         self.unreadLabel.clipsToBounds = true
         self.unreadLabel.text = NSLocalizedString("Unread", comment:"")
     }
@@ -55,9 +55,9 @@ class TextCardTableViewCell: UITableViewCell {
     func configureGradient() {
         self.gradient.frame = self.contentView.bounds
         self.gradient.startPoint = CGPointMake(0.1, 0.0)
-        self.gradient.endPoint = CGPointMake(0.9,1)
-        self.gradient.colors = [UIColor(red: 106.0/255.0, green: 106.0/255.0, blue: 106.0/255.0, alpha: 1).CGColor,
-            UIColor(red: 147.0/255.0, green: 147.0/255.0, blue: 147.0/255.0, alpha: 1).CGColor]
+        self.gradient.endPoint = CGPointMake(0.9, 1)
+        self.gradient.colors = [UIColor(red: 106.0 / 255.0, green: 106.0 / 255.0, blue: 106.0 / 255.0, alpha: 1).CGColor,
+            UIColor(red: 147.0 / 255.0, green: 147.0 / 255.0, blue: 147.0 / 255.0, alpha: 1).CGColor]
         self.contentView.layer.insertSublayer(self.gradient, atIndex: 0)
     }
     
@@ -65,7 +65,6 @@ class TextCardTableViewCell: UITableViewCell {
         super.layoutSubviews()
         self.gradient.frame = self.contentView.bounds
     }
-    
     
     override func setSelected(selected: Bool, animated: Bool) {
         let backgroundColor = self.unreadLabel.backgroundColor
@@ -85,6 +84,4 @@ class TextCardTableViewCell: UITableViewCell {
         self.layoutMargins = UIEdgeInsetsZero
         self.separatorInset = UIEdgeInsetsZero
     }
-
-
 }
