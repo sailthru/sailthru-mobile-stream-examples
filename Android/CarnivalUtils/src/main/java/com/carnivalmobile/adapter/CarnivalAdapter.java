@@ -7,19 +7,14 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.carnival.sdk.Carnival;
-import com.carnival.sdk.CarnivalImpressionType;
 import com.carnival.sdk.Message;
 import com.carnivalmobile.R;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public abstract class CarnivalAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
     private ArrayList<Message> mMessages = new ArrayList<>();
-    private Set<String> sentImpressions = new HashSet<>();
     private int mLastPosition = -1;
     private int mAnimation = R.anim.abc_slide_in_bottom;
     private Context mContext;
@@ -42,20 +37,12 @@ public abstract class CarnivalAdapter<VH extends RecyclerView.ViewHolder> extend
         return mMessages;
     }
 
-    private void registerImpression(Message message) {
-        if (message != null && !sentImpressions.contains(message.getMessageID())) {
-            Carnival.registerMessageImpression(CarnivalImpressionType.IMPRESSION_TYPE_STREAM_VIEW, message);
-            sentImpressions.add(message.getMessageID());
-        }
-    }
-
     @Override
     public abstract VH onCreateViewHolder(ViewGroup parent, int viewType);
 
     @Override
     public void onBindViewHolder(VH holder, int position) {
         Message message = mMessages.get(position);
-        registerImpression(message);
         onBindViewHolder(holder, position, message);
 
         if (holder.itemView != null) {

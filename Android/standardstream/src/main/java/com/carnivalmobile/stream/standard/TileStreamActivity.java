@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -242,7 +243,7 @@ public class TileStreamActivity extends AppCompatActivity {
                     contentTextView.setVisibility(View.GONE);
                 } else {
                     contentTextView.setVisibility(View.VISIBLE);
-                    contentTextView.setText(message.getText());
+                    contentTextView.setText(Html.fromHtml(message.getHtmlText()));
                 }
             }
 

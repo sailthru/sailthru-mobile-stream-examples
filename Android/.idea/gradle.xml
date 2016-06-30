@@ -17,6 +17,17 @@
             <option value="$PROJECT_DIR$/standardstream" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CarnivalUtils" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cardstream" />
+            <option value="$PROJECT_DIR$/graphicalstream" />
+            <option value="$PROJECT_DIR$/liststream" />
+            <option value="$PROJECT_DIR$/standardstream" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
