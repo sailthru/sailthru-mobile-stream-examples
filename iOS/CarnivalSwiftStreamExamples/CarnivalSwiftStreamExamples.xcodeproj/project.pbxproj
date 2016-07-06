@@ -26,6 +26,7 @@
 		22FED0D21BBCDFAC005792D9 /* ScreenSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */; };
 		22FED0D41BBCE01F005792D9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FED0D31BBCE01F005792D9 /* RoundedButton.swift */; };
 		2FEB09919E9EB7E70403AA14 /* libPods-CarnivalSwiftStreamExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B969930E5404CBB0F2A3636D /* libPods-CarnivalSwiftStreamExamples.a */; };
+		AAA349EE1D2B6B4C0002C759 /* UILabelHtmlExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA349ED1D2B6B4C0002C759 /* UILabelHtmlExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSizeHelper.swift; sourceTree = "<group>"; };
 		22FED0D31BBCE01F005792D9 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7E610055042D4238FCA7C7A5 /* Pods-CarnivalSwiftStreamExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarnivalSwiftStreamExamples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples.release.xcconfig"; sourceTree = "<group>"; };
+		AAA349ED1D2B6B4C0002C759 /* UILabelHtmlExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelHtmlExtention.swift; sourceTree = "<group>"; };
 		B969930E5404CBB0F2A3636D /* libPods-CarnivalSwiftStreamExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarnivalSwiftStreamExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				222F510F1C1E61870090542C /* HomeViewController.swift */,
 				22FED0D11BBCDFAC005792D9 /* ScreenSizeHelper.swift */,
 				22B433641B7803FE00F4A1DE /* AppDelegate.swift */,
+				AAA349ED1D2B6B4C0002C759 /* UILabelHtmlExtention.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -192,11 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22B4337E1B7803FE00F4A1DE /* Build configuration list for PBXNativeTarget "CarnivalSwiftStreamExamples" */;
 			buildPhases = (
-				6C5E6B07813BBCCB37D3EAEC /* Check Pods Manifest.lock */,
+				6C5E6B07813BBCCB37D3EAEC /* 📦 Check Pods Manifest.lock */,
 				22B4335B1B7803FE00F4A1DE /* Sources */,
 				22B4335C1B7803FE00F4A1DE /* Frameworks */,
 				22B4335D1B7803FE00F4A1DE /* Resources */,
-				3E2D5C7F13DBB06F9870B5F9 /* Copy Pods Resources */,
+				3E2D5C7F13DBB06F9870B5F9 /* 📦 Copy Pods Resources */,
+				F18E87AA5416D3694EE30827 /* 📦 Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,14 +266,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E2D5C7F13DBB06F9870B5F9 /* Copy Pods Resources */ = {
+		3E2D5C7F13DBB06F9870B5F9 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,19 +281,34 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C5E6B07813BBCCB37D3EAEC /* Check Pods Manifest.lock */ = {
+		6C5E6B07813BBCCB37D3EAEC /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F18E87AA5416D3694EE30827 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -309,6 +328,7 @@
 				22FED0D41BBCE01F005792D9 /* RoundedButton.swift in Sources */,
 				22FED0D21BBCDFAC005792D9 /* ScreenSizeHelper.swift in Sources */,
 				2214786B1BA28F93001FC4BB /* ListStreamViewController.swift in Sources */,
+				AAA349EE1D2B6B4C0002C759 /* UILabelHtmlExtention.swift in Sources */,
 				22CB31741BA6870300F1E60D /* CarnivalLabel.swift in Sources */,
 				22CB31701BA67CFC00F1E60D /* GraphicalCardTableViewCell.swift in Sources */,
 				222F51101C1E61870090542C /* HomeViewController.swift in Sources */,

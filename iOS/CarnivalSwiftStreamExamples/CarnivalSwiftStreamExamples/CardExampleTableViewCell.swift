@@ -85,7 +85,11 @@ class CardExampleTableViewCell: UITableViewCell {
     
     func configureText(message: CarnivalMessage) {
         self.titleLabel.text = message.title;
-        self.bodyLabel.text = message.text;
+        
+        if let bodyText = message.htmlText  {
+            self.bodyLabel.setHtmlFromString(bodyText);
+        }
+        
         self.bodyLabel.sizeToFit()
     }
     

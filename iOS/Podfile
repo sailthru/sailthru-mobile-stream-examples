@@ -3,7 +3,7 @@ workspace 'CarnivalStreamExamples.xcworkspace'
 xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
 xcodeproj 'CarnivalStreamExamples/CarnivalStreamExamples.xcodeproj'
 
-target :CarnivalSwiftStreamExamples, :exclusive => true do
+target :CarnivalSwiftStreamExamples do
     platform :ios, "7.0"
     pod "Carnival"
     pod "SDWebImage"
@@ -11,7 +11,7 @@ target :CarnivalSwiftStreamExamples, :exclusive => true do
     xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
 end
 
-target :CarnivalStreamExamples, :exclusive => true do
+target :CarnivalStreamExamples do
     platform :ios, "7.0"
     pod "Carnival"
     pod "SDWebImage"

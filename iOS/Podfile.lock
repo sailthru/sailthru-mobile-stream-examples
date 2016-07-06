@@ -1,9 +1,9 @@
 PODS:
-  - Carnival (3.5.2)
+  - Carnival (5.1.0)
   - DateTools (1.7.0)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - Carnival
@@ -11,8 +11,10 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC CHECKSUMS:
-  Carnival: 5687473762bb29fbeeaea43cb47b21b9fba1aea7
+  Carnival: c6342c9f7c6572fd3859db971752db0a6fb6020c
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 972c41e997c783a4de7cd7e30c300c2d1d84ef3b
+
+COCOAPODS: 1.0.0

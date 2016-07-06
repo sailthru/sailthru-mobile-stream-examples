@@ -8,6 +8,7 @@
 
 #import "TextCardTableViewCell.h"
 #import "ScreenSizeHelper.h"
+#import "UILabel+HTML.h"
 #import <DateTools.h>
 
 @interface TextCardTableViewCell()
@@ -26,8 +27,7 @@
 
 - (void)configureCellWithMessage:(CarnivalMessage *)message {
     self.titleLabel.text = message.title;
-    self.bodyLabel.text = message.text;
-    
+    [self.bodyLabel setHTMLFromString:message.htmlText];
     [self configureDateLabel:message];
     [self configureUnreadLabel:message];
     

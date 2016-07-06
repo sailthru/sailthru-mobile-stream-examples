@@ -5,33 +5,27 @@
 //  Created by Carnival Mobile
 //  Copyright (c) 2015 Carnival Mobile. All rights reserved.
 //
-//  For documentation see http://docs.carnivalmobile.com
+//  For documentation see http://docs.carnival.io
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "CarnivalMessageStream.h"
-#import "CarnivalStreamViewController.h"
-#import "CarnivalMacros.h"
+#import "CarnivalAttributes.h"
 
-#define CARNIVAL_VERSION @"3.5.2"
+#define CARNIVAL_VERSION @"5.1.0"
 
-__attribute__((deprecated))
-@protocol CarnivalIdentifierDataSource <NSObject>
-
-@required
-
-/**
- *  Override this method and return the user's unique identifier for Carnival.
- *
- *  @return The user's unique identifier for Carnival.
- *
- *  @warning This method is deprecated. Please use setUserId: instead.
- */
-- (carnival_nullable NSString *)carnivalUniqueIdentifier __attribute__((deprecated));
-
-@end
+/* Constants for Auto-Analytics Tracking */
+NS_ASSUME_NONNULL_BEGIN
+extern NSString * const CarnivalAutoAnalyticsSourceGoogleAnalytics;
+extern NSString * const CarnivalAutoAnalyticsSourceAdobeAnalytics;
+extern NSString * const CarnivalAutoAnalyticsSourceMixpanel;
+extern NSString * const CarnivalAutoAnalyticsSourceLocalytics;
+extern NSString * const CarnivalAutoAnalyticsSourceFlurryAnalytics;
+extern NSString * const CarnivalAutoAnalyticsSourceAmplitude;
+extern NSString * const CarnivalAutoAnalyticsSourceAll;
+NS_ASSUME_NONNULL_END
 
 @interface Carnival : NSObject
 
@@ -45,36 +39,45 @@ __attribute__((deprecated))
  *  Make sure your app bundle identifier is the same as whatever it is set to on http://app.carnivalmobile.com .
  *
  *  @warning It is important that this method is called at the earliest possible opportunity (e.g. application:didFinishLaunchingWithOptions:),
- *  calling it later in the app lifecycle can have unintended consequences.
+ *  calling it later in the app lifecycle can have unintended consequences. No startEngine: calls (overrides included) must not be called more than once.
  */
-+ (void)startEngine:(carnival_nonnull NSString *)appKey;
++ (void)startEngine:(nonnull NSString *)appKey;
 
 /**
- *  Sets the Carnival appKey credentials for this app, and the UIRemoteNotificationType at the same time.
+ *  Sets the Carnival appKey credentials for this app, and the UIUserNotificationType at the same time.
  *
  *  @param appKey The appKey you recieved when setting up your app at http://app.carnivalmobile.com .
- *  @param types The UIRemoteNotificationType attributes you wish to register this app for as defined in UIApplication.h
- *  see appledocs for more information.
+ *  @param types The UIUserNotificationType attributes you wish to register this app for as defined in UIApplication.h
+ *  see appledocs for more information. If targeting, iOS 7 users, please use UIUserNotificationType anyway.
  *  @discussion An exception will be raised if you do not set your appKey before you call any other methods.
  *  Make sure your app bundle identifier is the same as whatever it is on http://app.carnivalmobile.com .
  *
  *  @warning It is important that this method is called at the earliest possible opportunity (e.g. application:didFinishLaunchingWithOptions:),
- *  calling it later in the app lifecycle can have unintended consequences.
+ *  calling it later in the app lifecycle can have unintended consequences. No startEngine: calls (overrides included) must not be called more than once.
  */
-+ (void)startEngine:(carnival_nonnull NSString *)appKey andNotificationTypes:(UIRemoteNotificationType)types;
++ (void)startEngine:(nonnull NSString *)appKey andNotificationTypes:(UIUserNotificationType)types;
 
 /**
- *  Sets the Carnival appKey credentials for this app and optionally registers for push notifications with the badge, alert and sound UIRemoteNotificationType's
+ *  Sets the Carnival appKey credentials for this app and optionally registers for push notifications with the badge, alert and sound UIUserNotificationType's
  *
  *  @param appKey The appKey you recieved when setting up your app at http://app.carnivalmobile.com .
  *  @param registerForPushNotifications when this parameter is YES the Carnival iOS SDK will automatically register for push notifications
  *
  *  @warning It is important that this method is called at the earliest possible opportunity (e.g. application:didFinishLaunchingWithOptions:),
- *  calling it later in the app lifecycle can have unintended consequences.
+ *  calling it later in the app lifecycle can have unintended consequences. No startEngine: calls (overrides included) must not be called more than once.
  */
-+ (void)startEngine:(carnival_nonnull NSString *)appKey registerForPushNotifications:(BOOL)registerForPushNotifications;
++ (void)startEngine:(nonnull NSString *)appKey registerForPushNotifications:(BOOL)registerForPushNotifications;
 
-/** @name Tags */
+/**
+ * Enables AutoAnalytics tracking for a given array of event sources. This is opt-in as of Carnival 5.0.0.
+ * 
+ * @param enableArray - An array of const strings beginning with CarnivalAutoAnalyticsSource.
+ */
++ (void)enableAutoAnalytics:(nonnull NSArray *)enableArray;
+
+/** @name Tags
+ *  @warning Tags are now deprecated in favour for setting an array of strings with setStrings:forKey: methods.
+ */
 
 /**
  *  Asyncronously sets the tags for Carnival for this Device.
@@ -82,7 +85,7 @@ __attribute__((deprecated))
  *  @param tags An array of tags for this device. A nil value or an empty NSArray will clear the tags for this Device.
  *  @discussion Calling this method will overwrite any previously set tags for this Device.
  */
-+ (void)setTagsInBackground:(carnival_nonnull NSArray *)tags withResponse:(carnival_nullable void(^)(NSArray *__carnival_nullable tags, NSError *__carnival_nullable error))block;
++ (void)setTagsInBackground:(nonnull NSArray *)tags withResponse:(nullable void(^)(NSArray *__nullable tags, NSError *__nullable error))block __attribute__((deprecated("Use setStrings:forKey: instead.")));
 
 /**
  *  Asyncronously sets the tags for Carnival for this Device, with no callback block.
@@ -90,7 +93,7 @@ __attribute__((deprecated))
  *  @param tags An array of tags for this device. A nil value or an empty NSArray will clear the tags for this Device.
  *  @discussion Calling this method will overwrite any previously set tags for this Device.
  */
-+ (void)setTagsInBackground:(carnival_nonnull NSArray *)tags;
++ (void)setTagsInBackground:(nonnull NSArray *)tags __attribute__((deprecated("Use setStrings:forKey: instead.")));
 
 /**
  *  Synchronously sets the tags for Carnival for this Device.
@@ -103,7 +106,7 @@ __attribute__((deprecated))
  *
  *  @return NSArray of newly updated tags.
  */
-+ (carnival_nullable NSArray *)setTags:(carnival_nonnull NSArray *)tags error:(NSError *__carnival_nullable *__carnival_nullable)error;
++ (nullable NSArray *)setTags:(nonnull NSArray *)tags error:(NSError *__nullable *__nullable)error __attribute__((deprecated("Use setStrings:forKey: instead.")));
 
 /**
  *  Asyncronously adds the tags to Carnival for this Device.  If the tags are already registered with Carnival, this method does not add the tag again.
@@ -114,7 +117,7 @@ __attribute__((deprecated))
  *
  *  @warning This method behaves like getTagsInBackgroundWithResponse when tags argument is nil or not an NSArray.
  */
-+ (void)addTags:(carnival_nonnull NSArray *)tags inBackgroundWithResponse:(carnival_nullable void(^)(NSArray *__carnival_nullable tags, NSError *__carnival_nullable error))block;
++ (void)addTags:(nonnull NSArray *)tags inBackgroundWithResponse:(nullable void(^)(NSArray *__nullable tags, NSError *__nullable error))block __attribute__((deprecated("Use setStrings:forKey: instead.")));
 
 /**
  *  Syncronously adds the tags to Carnival for this Device.  If the tags are already registered with Carnival, this method does not add the tag again.
@@ -127,7 +130,7 @@ __attribute__((deprecated))
  *
  *  @return NSArray of newly updated tags.
  */
-+ (carnival_nullable NSArray *)addTags:(carnival_nonnull NSArray *)tags error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (nullable NSArray *)addTags:(nonnull NSArray *)tags error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("Use setStrings:forKey: instead.")));
 
 /**
  *  Asyncronously gets the tags for Carnival for this Device.
@@ -136,7 +139,7 @@ __attribute__((deprecated))
  *
  *  @warning This method does nothing when the response block is NULL.
  */
-+ (void)getTagsInBackgroundWithResponse:(carnival_nonnull void(^)(NSArray *__carnival_nullable tags, NSError *__carnival_nullable error))block;
++ (void)getTagsInBackgroundWithResponse:(nonnull void(^)(NSArray *__nullable tags, NSError *__nullable error))block __attribute__((deprecated));
 
 /**
  *  Syncronously gets the tags for Carnival for this Device.
@@ -145,9 +148,9 @@ __attribute__((deprecated))
  *
  *  @return NSArray of newly updated tags.
  */
-+ (carnival_nullable NSArray *)getTags:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (nullable NSArray *)getTags:(NSError  *__nullable *__nullable)error __attribute__((deprecated));
 
-/** @name Key/Value Attributes */
+/** @name Custom Attributes */
 
 /**
  *  Asyncronously sets a string value for a given key.
@@ -155,8 +158,8 @@ __attribute__((deprecated))
  *  @param string The string value to be set.
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
-**/
-+ (void)setString:(carnival_nonnull NSString *)string forKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
+ **/
++ (void)setString:(nonnull NSString *)string forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
 
 /**
  *  Syncronously sets a string value for a given key.
@@ -165,7 +168,28 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)setString:(carnival_nonnull NSString *)string forKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)setString:(nonnull NSString *)string forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Asyncronously sets an array of string for a given key.
+ *
+ *  @param array The array of strings to be set.
+ *  @param key The string value of the key.
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ **/
++ (void)setStrings:(nonnull NSArray<NSString *> *)array forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Syncronously sets an array of string for a given key.
+ *
+ *  @param array The array of strings to be set.
+ *  @param key The string value of the key.
+ *  @param error A pointer to an error which will be non-nil if there is an error.
+ **/
++ (void)setStrings:(nonnull NSArray<NSString *> *)array forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Asyncronously sets a float value for a given key.
@@ -174,7 +198,8 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
  **/
-+ (void)setFloat:(CGFloat)aFloat forKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
++ (void)setFloat:(CGFloat)aFloat forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Syncronously sets a float value for a given key.
@@ -183,25 +208,67 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)setFloat:(CGFloat)aFloat forKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)setFloat:(CGFloat)aFloat forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
 
 /**
- *  Asyncronously sets an integer value for a given key.
+ *  Asyncronously sets an array of NSNumbers (which are backed by floats) for a given key.
+ *
+ *  @param array The array of NSNumbers, backed by floats, to be set.
+ *  @param key The string value of the key.
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ **/
++ (void)setFloats:(nonnull NSArray<NSNumber *> *)array forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Syncronously sets an array of NSNumbers (which are backed by floats) for a given key.
+ *
+ *  @param array The array of NSNumbers, backed by floats, to be set.
+ *  @param key The string value of the key.
+ *  @param error A pointer to an error which will be non-nil if there is an error.
+ **/
++ (void)setFloats:(nonnull NSArray<NSNumber *> *)array forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Asyncronously sets an integer value for a given key. Only 32-bit Integers are supported.
  *
  *  @param integer The integer value to be set.
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
  **/
-+ (void)setInteger:(NSInteger)integer forKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
++ (void)setInteger:(NSInteger)integer forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
- *  Syncronously sets an integer value for a given key.
+ *  Syncronously sets an integer value for a given key. Only 32-bit Integers are supported.
  *
  *  @param integer The integer value to be set.
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)setInteger:(NSInteger)integer forKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)setInteger:(NSInteger)integer forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Asyncronously sets an array of NSNumbers (which are backed by integers) for a given key. Only 32-bit Integers are supported.
+ *
+ *  @param array The array of NSNumbers, backed by integers, to be set.
+ *  @param key The string value of the key.
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ **/
++ (void)setIntegers:(nonnull NSArray<NSNumber *> *)array forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Syncronously sets an array of NSNumbers (which are backed by integers) for a given key. Only 32-bit Integers are supported.
+ *
+ *  @param array The array of NSNumbers, backed by integers, to be set.
+ *  @param key The string value of the key.
+ *  @param error A pointer to an error which will be non-nil if there is an error.
+ **/
++ (void)setIntegers:(nonnull NSArray<NSNumber *> *)array forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Asyncronously sets a date value for a given key.
@@ -210,7 +277,8 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
  **/
-+ (void)setDate:(carnival_nonnull NSDate *)date forKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
++ (void)setDate:(nonnull NSDate *)date forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Syncronously sets a date value for a given key.
@@ -219,7 +287,28 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)setDate:(carnival_nonnull NSDate *)date forKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)setDate:(nonnull NSDate *)date forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Asyncronously sets an array of date values for a given key.
+ *
+ *  @param array The array of dates to be set.
+ *  @param key The string value of the key.
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ **/
++ (void)setDates:(nonnull NSArray<NSDate *> *)array forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
+
+/**
+ *  Syncronously sets an array of date values for a given key.
+ *
+ *  @param array The array of dates to be set.
+ *  @param key The string value of the key.
+ *  @param error A pointer to an error which will be non-nil if there is an error.
+ **/
++ (void)setDates:(nonnull NSArray<NSDate *> *)array forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Asyncronously sets a boolean value for a given key.
@@ -228,7 +317,8 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
  **/
-+ (void)setBool:(BOOL)boolean forKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError  *__carnival_nullable error))block;
++ (void)setBool:(BOOL)boolean forKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError  *__nullable error))block __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Syncronously sets a boolean value for a given key.
@@ -237,7 +327,8 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)setBool:(BOOL)boolean forKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)setBool:(BOOL)boolean forKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error __attribute__((deprecated("use setAttributes: with a CarnivalAttributes instance instead.")));
+
 
 /**
  *  Asyncronously removes a value for a given key.
@@ -245,7 +336,8 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param block The block returned from the asyncronous call possibly containing an error.
  **/
-+ (void)removeAttributeWithKey:(carnival_nonnull NSString *)key withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
++ (void)removeAttributeWithKey:(nonnull NSString *)key withResponse:(nullable void(^)(NSError *__nullable error))block;
+
 
 /**
  *  Syncronously removes a value for a given key.
@@ -253,7 +345,23 @@ __attribute__((deprecated))
  *  @param key The string value of the key.
  *  @param error A pointer to an error which will be non-nil if there is an error.
  **/
-+ (void)removeAttributeWithKey:(carnival_nonnull NSString *)key error:(NSError  *__carnival_nullable *__carnival_nullable)error;
++ (void)removeAttributeWithKey:(nonnull NSString *)key error:(NSError  *__nullable *__nullable)error;
+
+/**
+ *  Asyncronously sets a CarnivalAttributes object with Carnival.
+ *
+ *  @param attributes A nonnull CarnivalAttributes object with the desired attributes set.
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ */
++ (void)setAttributes:(nonnull CarnivalAttributes *)attributes withResponse:(nullable void(^)(NSError *__nullable error))block;
+
+/**
+ *  Syncronously sets a CarnivalAttributes object with Carnival.
+ *
+ *  @param attributes A nonnull CarnivalAttributes object with the desired attributes set.
+ *  @param error A pointer to an error which will be non-nil if there is an error.
+ */
++ (void)setAttributes:(nonnull CarnivalAttributes *)attributes error:(NSError  *__nullable *__nullable)error;
 
 /** @name Badges */
 
@@ -270,7 +378,7 @@ __attribute__((deprecated))
  *
  *  @param location The location to forward
  */
-+ (void)updateLocation:(carnival_nonnull CLLocation *)location;
++ (void)updateLocation:(nonnull CLLocation *)location;
 
 /** @name Manual Push Notification setup */
 
@@ -279,50 +387,41 @@ __attribute__((deprecated))
  *
  *  @param deviceToken The APNS token for the current device. This deviceToken is normally passed back by the application:didRegisterForRemoteNotificationsWithDeviceToken: method.
  */
-+ (void)setDeviceTokenInBackground:(carnival_nonnull NSData *)deviceToken;
++ (void)setDeviceTokenInBackground:(nonnull NSData *)deviceToken;
 
 /**
  *  Tells the Carnival SDK to handle the notification.
  *
  *  @param notificationDict The userInfo dictionary from the remote notification you want the Carnival SDK to handle. This dictionary is normally passed back to you from the application:didReceiveRemoteNotification: method.
  */
-+ (void)handleNotification:(carnival_nonnull NSDictionary *)notificationDict;
-
-/** @name Identifier */
-
-/**
- *  Sets the Identifier dataSource which gives the Carnival SDK identifier information
- *
- *  @param dataSource An object that conforms to the CarnivalIdentifierDataSource protocol
- */
-+ (void)setIdentifierDataSource:(carnival_nonnull id<CarnivalIdentifierDataSource>)dataSource __attribute__((deprecated));
++ (void)handleNotification:(nonnull NSDictionary *)notificationDict;
 
 /** @name Device details */
 
 /**
- *  Returns the current device's ID as a NSString
+ *  Returns the current device's ID as a NSString.
  *
  *  @param completion A block which gets called after the current device is fetched containing the current device's ID
  */
-+ (void)deviceID:(carnival_nonnull void (^)(NSString *__carnival_nullable deviceID, NSError *__carnival_nullable error))completion;
++ (void)deviceID:(nonnull void (^)(NSString *__nullable deviceID, NSError *__nullable error))completion;
 
 /** @name Enabling/Disabling in-app notifications */
 
 /**
- *  Enables or disables the showing of in-app notifications
+ *  Enables or disables the showing of in-app notifications.
  *
- *  @param enabled A boolean value indicating whether in-app notfications are enabled
+ *  @param enabled A boolean value indicating whether in-app notfications are enabled.
  */
 + (void)setInAppNotificationsEnabled:(BOOL)enabled;
 
 /** @name Events */
 
 /**
- *  Logs a custom event with the given name
+ *  Logs a custom event with the given name.
  *
- *  @param name The name of the custom event to be logged
+ *  @param name The name of the custom event to be logged.
  */
-+ (void)logEvent:(carnival_nonnull NSString *)name;
++ (void)logEvent:(nonnull NSString *)name;
 
 /** @name Users */
 
@@ -333,6 +432,33 @@ __attribute__((deprecated))
  *
  *  @param block The block returned from the asyncronous call possibly containing an error.
  */
-+ (void)setUserId:(carnival_nullable NSString *)userId withResponse:(carnival_nullable void(^)(NSError *__carnival_nullable error))block;
++ (void)setUserId:(nullable NSString *)userId withResponse:(nullable void(^)(NSError *__nullable error))block;
+
+/**
+ *  Sets a user email for the device.
+ *
+ *  @param userEmail The email of the user to be set.
+ *
+ *  @param block The block returned from the asyncronous call possibly containing an error.
+ */
++ (void)setUserEmail:(nullable NSString *)userEmail withResponse:(nullable void(^)(NSError *__nullable error))block;
+
+
+/**
+ *  Enabled location tracking based on IP Address. Tracking location tracking is enabled by default.
+ *  Use this method for users who may not want to have their location tracked at all.
+ *
+ *  @param disabled A boolean value indicating whether or not to disable location based on IP Address.
+ */
++ (void)setGeoIPTrackingEnabled:(BOOL)enabled;
+
+/**
+ *  Enable crash tracking for recording sessions which end in a crash.
+ *  Warning: This is for advance uses where in some cases, crash handlers from Test Flight or Fabric (Crashlytics) interrupt Carnival crash detection.
+ *  If you are not experiencing these issues, do not use this method. 
+ *
+ *  @param disabled A boolean value indicating whether or not to install the crash handlers. Defaults to YES.
+ */
++ (void)setCrashHandlersEnabled:(BOOL)enabled;
 
 @end

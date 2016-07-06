@@ -1,6 +1,6 @@
-[![Cocoapods platforms](http://img.shields.io/cocoapods/p/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/p/Carnival.svg?style=flat)
-[![Cocoapods license](http://img.shields.io/cocoapods/l/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/l/Carnival.svg?style=flat)
-[![Cocoapods pod version](http://img.shields.io/cocoapods/v/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/v/Carnival.svg?style=flat)
+[![CocoaPods platforms](http://img.shields.io/cocoapods/p/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/p/Carnival.svg?style=flat)
+[![CocoaPods license](http://img.shields.io/cocoapods/l/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/l/Carnival.svg?style=flat)
+[![CocoaPods pod version](http://img.shields.io/cocoapods/v/Carnival.svg?style=flat)](http://img.shields.io/cocoapods/v/Carnival.svg?style=flat)
 
 Carnival Mobile SDK for iOS
 ==========================
@@ -17,7 +17,7 @@ This project contains the Carnival library, as well as an example project that y
 Integration
 ------
 
-Detailed integration steps can be found in the official Carnival Mobile documentation: http://docs.carnivalmobile.com/developers/sdk/ios/
+Detailed integration steps can be found in the official Carnival Mobile documentation: http://docs.carnival.io/docs/ios-integration
 
 Required Frameworks
 -------

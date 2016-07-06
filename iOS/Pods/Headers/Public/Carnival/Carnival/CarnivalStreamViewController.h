@@ -1,1 +1,0 @@
-../../../../Carnival/Carnival.embeddedframework/Carnival.framework/Versions/A/Headers/CarnivalStreamViewController.h

@@ -26,6 +26,7 @@
 		22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB2DB01C166BEF00114ECD /* HomeViewController.m */; };
 		666B255D1BABD1900011C283 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B255C1BABD1900011C283 /* RoundedButton.m */; };
 		A51D942164D3B89C953EF182 /* libPods-CarnivalStreamExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958CB4E12A1A3D0FC7374C82 /* libPods-CarnivalStreamExamples.a */; };
+		AAA349EC1D2B60620002C759 /* UILabel+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA349EB1D2B60620002C759 /* UILabel+HTML.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		666B255C1BABD1900011C283 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
 		66E8BC3C1BB013A700E7DC2B /* ScreenSizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenSizeHelper.h; sourceTree = "<group>"; };
 		958CB4E12A1A3D0FC7374C82 /* libPods-CarnivalStreamExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CarnivalStreamExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA349EA1D2B60620002C759 /* UILabel+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HTML.h"; sourceTree = "<group>"; };
+		AAA349EB1D2B60620002C759 /* UILabel+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HTML.m"; sourceTree = "<group>"; };
 		B115D1EF3E0384082140EE26 /* Pods-CarnivalStreamExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarnivalStreamExamples.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +186,7 @@
 		22CC19151B7324D600368642 /* CarnivalStreamExamples */ = {
 			isa = PBXGroup;
 			children = (
+				AAA349E91D2B5FCF0002C759 /* Categories */,
 				228D47081C20E80100D16AF4 /* User Interface */,
 				228D47091C20E80A00D16AF4 /* Misc */,
 				22BD55141B74458900BDDD86 /* List Example */,
@@ -203,6 +207,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AAA349E91D2B5FCF0002C759 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AAA349EA1D2B60620002C759 /* UILabel+HTML.h */,
+				AAA349EB1D2B60620002C759 /* UILabel+HTML.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		DE9747D376F65A2C4B5FA8D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,11 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22CC19361B7324D600368642 /* Build configuration list for PBXNativeTarget "CarnivalStreamExamples" */;
 			buildPhases = (
-				D1508A18FFB8EE410C8E780B /* Check Pods Manifest.lock */,
+				D1508A18FFB8EE410C8E780B /* 📦 Check Pods Manifest.lock */,
 				22CC190F1B7324D600368642 /* Sources */,
 				22CC19101B7324D600368642 /* Frameworks */,
 				22CC19111B7324D600368642 /* Resources */,
-				17CF3658319861ECF4AF6A8F /* Copy Pods Resources */,
+				17CF3658319861ECF4AF6A8F /* 📦 Copy Pods Resources */,
+				39EC3F2738DA8F31798E6554 /* 📦 Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,14 +295,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		17CF3658319861ECF4AF6A8F /* Copy Pods Resources */ = {
+		17CF3658319861ECF4AF6A8F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +310,29 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1508A18FFB8EE410C8E780B /* Check Pods Manifest.lock */ = {
+		39EC3F2738DA8F31798E6554 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1508A18FFB8EE410C8E780B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +354,7 @@
 				225C7B251B9D4009000CC025 /* CarnivalLabel.m in Sources */,
 				22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */,
 				666B255D1BABD1900011C283 /* RoundedButton.m in Sources */,
+				AAA349EC1D2B60620002C759 /* UILabel+HTML.m in Sources */,
 				22C325661BFA838800CC37D0 /* CardExampleViewController.m in Sources */,
 				225C7B2F1B9F92ED000CC025 /* GraphicalCardsViewController.m in Sources */,
 				2237D8EE1BDF197000700605 /* StandardExampleViewController.m in Sources */,

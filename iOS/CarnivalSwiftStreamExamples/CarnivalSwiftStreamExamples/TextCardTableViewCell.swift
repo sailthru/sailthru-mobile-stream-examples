@@ -23,9 +23,9 @@ class TextCardTableViewCell: UITableViewCell {
     func configureCell(message: CarnivalMessage) {
         self.titleLabel.text = message.title
         
-        if let bodyText = message.text  {
+        if let bodyText = message.htmlText  {
             if  self.bodyLabel != nil {
-                self.bodyLabel.text = bodyText
+                self.bodyLabel.setHtmlFromString(bodyText);
             }
         }
         

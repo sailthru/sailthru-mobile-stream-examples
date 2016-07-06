@@ -5,11 +5,10 @@
 //  Created by Carnival Mobile
 //  Copyright (c) 2015 Carnival Mobile. All rights reserved.
 //
-//  For documentation see http://docs.carnivalmobile.com
+//  For documentation see http://docs.carnival.io
 //
 
 #import <Foundation/Foundation.h>
-#import "CarnivalMacros.h"
 
 /**
  * Declares which type the Carnival Message is. Types are defined at time of authoring.
@@ -29,22 +28,27 @@ typedef NS_ENUM(NSInteger, CarnivalMessageType) {
 /**
  * The time at which the message was created.
  */
-@property (nonatomic, strong, carnival_nonnull) NSDate *createdAt;
+@property (nonatomic, strong, nonnull) NSDate *createdAt;
 
 /**
  * The unique ID of the message.
  */
-@property (nonatomic, strong, carnival_nonnull) NSString *messageID;
+@property (nonatomic, strong, nonnull) NSString *messageID;
 
 /**
  * The body text of the message.
  */
-@property (nonatomic, strong, carnival_nullable) NSString *text;
+@property (nonatomic, strong, nullable) NSString *text;
+
+/**
+ * The body text of the message rendered into HTML.
+ */
+@property (nonatomic, strong, nullable) NSString *htmlText;
 
 /**
  * The title of the message.
  */
-@property (nonatomic, strong, carnival_nonnull) NSString *title;
+@property (nonatomic, strong, nonnull) NSString *title;
 
 /**
  * The type of the message.
@@ -54,21 +58,33 @@ typedef NS_ENUM(NSInteger, CarnivalMessageType) {
 /**
  * The URL of the image attached to the message. Nil if no image attached.
  */
-@property (nonatomic, strong, carnival_nullable) NSURL *imageURL;
+@property (nonatomic, strong, nullable) NSURL *imageURL;
 
 /**
  * The URL attached to the message. Nil if no URL attached.
  */
-@property (nonatomic, strong, carnival_nullable) NSURL *URL;
+@property (nonatomic, strong, nullable) NSURL *URL;
 
 /**
  * The URL of the video attached to the message. Nil if no video attached.
  */
-@property (nonatomic, strong, carnival_nullable) NSURL *videoURL;
+@property (nonatomic, strong, nullable) NSURL *videoURL;
 
 /**
  * Whether or not the message has been marked as read.
  */
 @property (nonatomic, assign, readonly, getter=isRead) BOOL read;
+
+
+/**
+ * A dictionary of arbitary attributes set on the message.
+ */
+@property (nonatomic, strong, nullable) NSDictionary *attributes;
+
+
+/**
+ * Whether or not a message had a push attached.
+ */
+@property (nonatomic, assign, readonly, getter=hasPushAttached) BOOL pushAttached;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "CardExampleTableViewCell.h"
+#import "UILabel+HTML.h"
 #import <DateTools/DateTools.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -104,7 +105,7 @@
 
 - (void)configureText:(CarnivalMessage *)message {
     self.titleLabel.text = message.title;
-    self.bodyLabel.text = message.text;
+    [self.bodyLabel setHTMLFromString:message.htmlText];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
