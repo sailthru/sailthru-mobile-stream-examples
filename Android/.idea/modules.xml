@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android.iml" filepath="$PROJECT_DIR$/Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/CarnivalUtils/CarnivalUtils.iml" filepath="$PROJECT_DIR$/CarnivalUtils/CarnivalUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cardstream/cardstream.iml" filepath="$PROJECT_DIR$/cardstream/cardstream.iml" />
-      <module fileurl="file://$PROJECT_DIR$/carnival-android-examples-source.iml" filepath="$PROJECT_DIR$/carnival-android-examples-source.iml" />
       <module fileurl="file://$PROJECT_DIR$/graphicalstream/graphicalstream.iml" filepath="$PROJECT_DIR$/graphicalstream/graphicalstream.iml" />
       <module fileurl="file://$PROJECT_DIR$/liststream/liststream.iml" filepath="$PROJECT_DIR$/liststream/liststream.iml" />
       <module fileurl="file://$PROJECT_DIR$/standardstream/standardstream.iml" filepath="$PROJECT_DIR$/standardstream/standardstream.iml" />
