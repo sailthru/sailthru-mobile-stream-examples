@@ -16,7 +16,7 @@ These examples are fully open source. If you'd like to suggest an improvement, m
 If you customize the examples in a big way, please commit them back to the app so others can benefit too. 
 
 ## Docs and Support
-Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@carnival.io](support@carnival.io).
+Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@sailthru.com](support@sailthru.com).
 
 ## Libraries Used
 For iOS, we use [SDWebImage](https://github.com/rs/SDWebImage) and [DateTools](https://github.com/MatthewYork/DateTools). 
