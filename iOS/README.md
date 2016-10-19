@@ -18,12 +18,17 @@ Both Example projects contains 4 streams.
 4. A Card Example
 
 ## Installation
+
+### Dependencies 
+
 To install, simply copy the files across to your project. Update your Podfile with the Pods we rely on. For Swift projects, also update your bridging header file. 
 
 ```
 pod 'DateTools'
 pod 'SDWebImage'
 ```
+
+### Source Files
 
 List Example: 
 
@@ -49,9 +54,20 @@ Card  Example:
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
 
-
-
 The view controller is like any other, integrate the navigation of it in a way that makes sense to your application.
+
+### Images
+Copy the following images from Assets.xcassets:
+
+ * `close_button`
+ * `image_icon`
+ * `link_icon`
+ * `no_data_bubble`
+ * `text_icon`
+ * `time_icon_white`
+ * `time_icon`
+ * `video_icon`
+
 
 ## Your decisions 
 
@@ -78,4 +94,4 @@ These examples are fully open source! If you'd like to suggest an improvement, m
 If you customise the examples in a big way, please comit them back to the app so others can benefit too. 
 
 ## Docs and Support
-Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@carnival.io](support@carnival.io).
+Our docs are at [docs.carnival.io](docs.carnival.io) for more information. Any questions? Create an issue or email at [support@sailthru.com](support@sailthru.com).
