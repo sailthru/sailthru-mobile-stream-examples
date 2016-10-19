@@ -20,16 +20,36 @@ Both Example projects contains 4 streams.
 ## Installation
 To install, simply copy the files across to your project. Update your Podfile with the Pods we rely on. For Swift projects, also update your bridging header file. 
 
-List Stream Example: 
-1. Copy `BasicListStreamTableViewCell`, `ListStreamViewController`, `ScreenSizeHelper` (.h/.m or .swift) into your project.
+```
+pod 'DateTools'
+pod 'SDWebImage'
+```
+
+List Example: 
+
+1. Copy all files in `List Example` and `ScreenSizeHelper` (.h/.m or .swift) into your project.
+2. Copy the view controller from the `Main.storyboard` file into your own.
+3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
+
+Graphical Cards Example: 
+
+1. Copy all files in `Graphical Cards Example` and `ScreenSizeHelper` (.h/.m or .swift) into your project.
+2. Copy the view controller from the `Main.storyboard` file into your own.
+3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
+
+Standard  Example: 
+
+1. Copy all files in `Standard Example`, `UILabel+HTML`, `ScreenSizeHelper` (.h/.m or .swift) into your project.
+2. Copy the view controller from the `Main.storyboard` file into your own.
+3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
+
+Card  Example: 
+
+1. Copy all files in `Card Example`, `UILabel+HTML`, `CarnivalLabel` (.h/.m or .swift) into your project.
 2. Copy the view controller from the `Main.storyboard` file into your own.
 3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
 
 
-Graphic Stream Example: 
-1. Copy all files in `Graphic Cards Example` and `ScreenSizeHelper` (.h/.m or .swift) into your project.
-2. Copy the view controller from the `Main.storyboard` file into your own.
-3. Update any custom class Modules value to your own modules. (Click the class, View the Identity inspector)
 
 The view controller is like any other, integrate the navigation of it in a way that makes sense to your application.
 
