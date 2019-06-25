@@ -5,9 +5,11 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.carnivalmobile.R;
 
-final public class RectangleImageView extends ImageView {
+final public class RectangleImageView extends AppCompatImageView {
 
     private static final int FIXED_DIMENSION_WIDTH = 0;
     private static final int FIXED_DIMENSION_HEIGHT = 1;

@@ -12,7 +12,7 @@
         android:clipChildren="false"
         android:paddingBottom="1dp">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_marginLeft="@dimen/tile_margin_horizontal"
@@ -125,7 +125,7 @@
 
             </RelativeLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     </FrameLayout>
 
