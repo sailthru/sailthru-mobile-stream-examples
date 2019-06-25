@@ -100,7 +100,7 @@ public class ListStreamActivity extends AppCompatActivity {
                         ListStreamActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                mAdapter.notifyItemRangeInserted(0, messages.size() - 1);
+                                mAdapter.notifyItemRangeInserted(0, messages.size());
                                 crossfadeViews(loadingLayout, mRecyclerView);
                             }
                         });

@@ -102,7 +102,7 @@ public class CardStreamActivity extends AppCompatActivity {
                         CardStreamActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                mAdapter.notifyItemRangeInserted(0, messages.size() - 1);
+                                mAdapter.notifyItemRangeInserted(0, messages.size());
                                 crossfadeViews(loadingLayout, mRecyclerView);
                             }
                         });
