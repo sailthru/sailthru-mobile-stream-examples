@@ -47,9 +47,9 @@
             self.typeLabel.text =  NSLocalizedString(@"Video", nil);
             self.typeImage.image = [UIImage imageNamed:@"video_icon"];
             break;
-        case CarnivalMessageTypeFakeCall:
-            self.typeLabel.text = NSLocalizedString(@"Call", nil);
-            self.typeImage.image = [UIImage imageNamed:@"video_icon"];
+        case CarnivalMessageTypeStandardPush:
+            self.typeLabel.text = NSLocalizedString(@"Text", nil);
+            self.typeImage.image = [UIImage imageNamed:@"text_icon"];
             break;
         case CarnivalMessageTypeLink:
             self.typeLabel.text = NSLocalizedString(@"Link", nil);
