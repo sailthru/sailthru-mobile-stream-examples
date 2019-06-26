@@ -25,43 +25,43 @@ class CardExampleViewController: UIViewController {
         self.navigationBar.topItem?.title = NSLocalizedString("Messages", comment:"")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refreshTableView()
     }
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "fetchMessages", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(CardExampleViewController.fetchMessages), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     
     // MARK: UI Controls
     
     @IBAction func refreshTableView() {
-        self.tableView!.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+        self.tableView!.setContentOffset(CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
         self.refreshControl!.beginRefreshing()
         self.fetchMessages()
     }
     
     @IBAction func closeStream(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Navigation Bar and Status Bar
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return UIBarPosition.TopAttached
+        return UIBarPosition.topAttached
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         //Invalidate the heights cache
-        self.rowHeightCache = [CGFloat?](count: self.messages.count, repeatedValue: nil)
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        self.rowHeightCache = [CGFloat?](repeating: nil, count: self.messages.count)
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     //MARK: TableView Data Source Methods
@@ -75,21 +75,21 @@ class CardExampleViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(CardExampleTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! CardExampleTableViewCell
+        return tableView.dequeueReusableCell(withIdentifier: CardExampleTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! CardExampleTableViewCell
     }
     
     //MARK: TableView Delegate Methods
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         //Get the message
-        let message = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Configure the cell
         let aCell = cell as! CardExampleTableViewCell
-        aCell.configureCell(message, indexPath: indexPath)
+        aCell.configureCell(message: message, indexPath: indexPath)
         
         //Create a stream impression on the message
-        CarnivalMessageStream.registerImpressionWithType(CarnivalImpressionType.StreamView, forMessage: message)
+        CarnivalMessageStream.registerImpression(with: CarnivalImpressionType.streamView, for: message)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -97,42 +97,42 @@ class CardExampleViewController: UIViewController {
             return size;
         }
         
-        let size = self.heightForCell(indexPath)
+        let size = self.heightForCell(indexPath: indexPath)
         self.rowHeightCache[indexPath.row] = size
 
         return size
     }
     
     func heightForCell(indexPath: NSIndexPath) -> CGFloat {
-        let sizingCell = self.tableView.dequeueReusableCellWithIdentifier(CardExampleTableViewCell.cellIdentifier()) as! CardExampleTableViewCell
-        sizingCell.configureCell(self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage, indexPath: indexPath)
+        let sizingCell = self.tableView.dequeueReusableCell(withIdentifier: CardExampleTableViewCell.cellIdentifier()) as! CardExampleTableViewCell
+        sizingCell.configureCell(message: self.messages.object(at: indexPath.row) as! CarnivalMessage, indexPath: indexPath)
         
-        return self.calculateHeightForConfiguredSizingCell(sizingCell)
+        return self.calculateHeightForConfiguredSizingCell(sizingCell: sizingCell)
     }
     
     func calculateHeightForConfiguredSizingCell(sizingCell: UITableViewCell) -> CGFloat {
-        sizingCell.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.frame))
+        sizingCell.frame = CGRect(x: 0.0, y: 0.0, width: self.tableView.frame.width, height: sizingCell.frame.height)
         
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Get the Carnival Message
-        let message = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Present the full screen message
-        CarnivalMessageStream.presentMessageDetailForMessage(message)
+        CarnivalMessageStream.presentMessageDetail(for: message)
         
         //Mark the message as read
-        CarnivalMessageStream.markMessageAsRead(message, withResponse: nil)
+        CarnivalMessageStream.markMessage(asRead: message, withResponse: nil)
         
         //Deselect the row that is selected
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     // MARK: Get Messages
@@ -143,15 +143,15 @@ class CardExampleViewController: UIViewController {
             
             if let error = anError {
                 print(error, terminator: "")
-                self.tableView.hidden = true
+                self.tableView.isHidden = true
                 self.emptyDataLabel.text = NSLocalizedString("Failed to get messages", comment:"")
             }
             
             if let messages = theMessages {
                 self.messages = NSMutableArray(array:messages)
-                self.rowHeightCache = [CGFloat?](count: self.messages.count, repeatedValue: nil)
+                self.rowHeightCache = [CGFloat?](repeating: nil, count: self.messages.count)
                 self.tableView.reloadData()
-                self.tableView.hidden = self.messages.count == 0
+                self.tableView.isHidden = self.messages.count == 0
                 self.emptyDataLabel.text = NSLocalizedString("You have no messages", comment:"")
             }
         }

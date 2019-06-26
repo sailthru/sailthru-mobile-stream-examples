@@ -11,11 +11,11 @@ import Foundation
 extension UILabel {
     
     private func hexStringFromColor(color: UIColor) -> String {
-        let components = CGColorGetComponents(color.CGColor);
+        let components = color.cgColor.components
         
-        let r = Float(components[0]);
-        let g = Float(components[1]);
-        let b = Float(components[2]);
+        let r = Float(components![0])
+        let g = Float(components![1])
+        let b = Float(components![2])
         
         return String.localizedStringWithFormat("#%02lX%02lX%02lX",
                                                   lroundf(r * 255),
@@ -25,13 +25,13 @@ extension UILabel {
     
     public func setHtmlFromString(html: String) -> Void {
         
-        let string = html.stringByAppendingFormat("<style>body{font-family: '%@'; font-size:%fpx; color: %@;}</style>",
+        let string = html.appendingFormat("<style>body{font-family: '%@'; font-size:%fpx; color: %@;}</style>",
                                                   self.font.fontName,
                                                   self.font.pointSize,
-                                                  self.hexStringFromColor(self.textColor));
+                                                  self.hexStringFromColor(color: self.textColor));
         
         do {
-            try self.attributedText = NSAttributedString.init(data: string.dataUsingEncoding(NSUnicodeStringEncoding)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding], documentAttributes: nil);
+            try self.attributedText = NSAttributedString.init(data: string.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: String.Encoding.utf8], documentAttributes: nil);
         } catch {
             
         }

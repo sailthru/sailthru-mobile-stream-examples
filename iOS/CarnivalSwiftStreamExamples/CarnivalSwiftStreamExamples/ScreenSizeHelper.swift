@@ -11,7 +11,7 @@ import Foundation
 class ScreenSizeHelper: NSObject {
 
     class func isIphone5orLess() -> Bool {
-        return (UIScreen.mainScreen().bounds.size.width <= 320 || UIScreen.mainScreen().bounds.size.height <= 320)
+        return (UIScreen.main.bounds.size.width <= 320 || UIScreen.main.bounds.size.height <= 320)
     }
     
     class func textSmall() -> CGFloat {

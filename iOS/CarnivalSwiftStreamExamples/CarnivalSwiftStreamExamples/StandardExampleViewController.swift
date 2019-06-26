@@ -27,43 +27,43 @@ class StandardExampleViewController: UIViewController {
         self.navigationBar.topItem?.title = NSLocalizedString("Messages", comment:"")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refreshTableView()
     }
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "fetchMessages", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(StandardExampleViewController.fetchMessages), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     
     // MARK: UI Controls
 
     @IBAction func refreshTableView() {
-        self.tableView!.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+        self.tableView!.setContentOffset(CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
         self.refreshControl!.beginRefreshing()
         self.fetchMessages()
     }
     
     @IBAction func closeStream(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Navigation Bar and Status Bar
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return UIBarPosition.TopAttached
+        return UIBarPosition.topAttached
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         //Invalidate the heights cache
-        self.rowHeightCache = [CGFloat?](count: self.messages.count, repeatedValue: nil)
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        self.rowHeightCache = [CGFloat?](repeating: nil, count: self.messages.count)
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     //MARK: TableView Data Source Methods
@@ -81,18 +81,18 @@ class StandardExampleViewController: UIViewController {
             return nil
         }
         //Define the header view
-        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 60))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 60))
         headerView.backgroundColor = UIColor(red: 241.0 / 255.0, green: 241.0 / 255.0, blue: 245.0 / 255.0, alpha: 1)
         
         //Define and configure the label
-        let messagesLabel = UILabel(frame: CGRectMake(10, 6, tableView.frame.size.width, 30))
+        let messagesLabel = UILabel(frame: CGRect(x: 10, y: 6, width: tableView.frame.size.width, height: 30))
         if  self.messages.count == 0 {
             messagesLabel.text = NSLocalizedString("1 MESSAGE", comment:"")
         }
         else {
             messagesLabel.text =  NSLocalizedString("\(self.messages.count) MESSAGES", comment:"")
         }
-        messagesLabel.font = UIFont.systemFontOfSize(12)
+        messagesLabel.font = UIFont.systemFont(ofSize: 12)
         messagesLabel.textColor = UIColor(red: 112.0 / 255.0, green: 107.0 / 255, blue: 107.0 / 255.0, alpha: 1)
         
         //Add the label to the header view and return it
@@ -107,21 +107,21 @@ class StandardExampleViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(StandardTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! StandardTableViewCell
+        return tableView.dequeueReusableCell(withIdentifier: StandardTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! StandardTableViewCell
     }
     
     //MARK: TableView Delegate Methods
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         //Get the message
-        let message  = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message  = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Configure the cell
         let aCell = cell as! StandardTableViewCell
-        aCell.configureCell(message)
+        aCell.configureCell(message: message)
         
         //Create a stream impression on the message
-        CarnivalMessageStream.registerImpressionWithType(CarnivalImpressionType.StreamView, forMessage: message)
+        CarnivalMessageStream.registerImpression(with: CarnivalImpressionType.streamView, for: message)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -129,42 +129,42 @@ class StandardExampleViewController: UIViewController {
             return size;
         }
         
-        let size = self.heightForCell(indexPath)
+        let size = self.heightForCell(indexPath: indexPath)
         self.rowHeightCache[indexPath.row] = size
         
         return size
     }
     
     func heightForCell(indexPath: NSIndexPath) -> CGFloat {
-        let sizingCell = self.tableView.dequeueReusableCellWithIdentifier(StandardTableViewCell.cellIdentifier()) as! StandardTableViewCell
-        sizingCell.configureCell(self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage)
+        let sizingCell = self.tableView.dequeueReusableCell(withIdentifier: StandardTableViewCell.cellIdentifier()) as! StandardTableViewCell
+        sizingCell.configureCell(message: self.messages.object(at: indexPath.row) as! CarnivalMessage)
         
-        return self.calculateHeightForConfiguredSizingCell(sizingCell)
+        return self.calculateHeightForConfiguredSizingCell(sizingCell: sizingCell)
     }
     
     func calculateHeightForConfiguredSizingCell(sizingCell: UITableViewCell) -> CGFloat {
-        sizingCell.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.frame))
+        sizingCell.frame = CGRect(x: 0.0, y: 0.0, width: self.tableView.frame.width, height: sizingCell.frame.height)
         
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Get the Carnival Message
-        let message = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Present the full screen message
-        CarnivalMessageStream.presentMessageDetailForMessage(message)
+        CarnivalMessageStream.presentMessageDetail(for: message)
         
         //Mark the message as read
-        CarnivalMessageStream.markMessageAsRead(message, withResponse: nil)
+        CarnivalMessageStream.markMessage(asRead: message, withResponse: nil)
         
         //Deselect the row that is selected
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     // MARK: Get Messages
@@ -175,15 +175,15 @@ class StandardExampleViewController: UIViewController {
             
             if let error = anError {
                 print(error, terminator: "")
-                self.tableView.hidden = true
+                self.tableView.isHidden = true
                 self.emptyDataLabel.text = NSLocalizedString("Failed to get messages", comment:"")
                 
             }
             if let messages = theMessages {
                 self.messages = NSMutableArray(array:messages)
-                self.rowHeightCache = [CGFloat?](count: self.messages.count, repeatedValue: nil)
+                self.rowHeightCache = [CGFloat?](repeating: nil, count: self.messages.count)
                 self.tableView.reloadData()
-                self.tableView.hidden = self.messages.count == 0
+                self.tableView.isHidden = self.messages.count == 0
                 self.emptyDataLabel.text = NSLocalizedString("You have no messages", comment:"")
                 
             }

@@ -21,19 +21,19 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         
         self.setUpRefreshControl()
     
-        if self.tableView.respondsToSelector("setSeparatorInset") {
-            self.tableView.separatorInset = UIEdgeInsetsZero
+        if self.tableView.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            self.tableView.separatorInset = UIEdgeInsets.zero
         }
         self.navigationBar.topItem?.title = NSLocalizedString("Messages", comment:"")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.refreshTableView()
     }
     
     func refreshTableView() {
-        self.tableView!.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+        self.tableView!.setContentOffset(CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
         self.refreshControl!.beginRefreshing()
         self.fetchMessages()
     }
@@ -44,58 +44,58 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let message = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         if(message.imageURL != nil || message.videoURL != nil) {
-            return self.heightForImageCell(indexPath)
+            return self.heightForImageCell(indexPath: indexPath as NSIndexPath)
         }
         else {
-            return self.heightForTextCell(indexPath)
+            return self.heightForTextCell(indexPath: indexPath as NSIndexPath)
         }
     }
     
     func heightForImageCell(indexPath: NSIndexPath) -> CGFloat {
-        let width = CGRectGetWidth(self.view.bounds)
+        let width = self.view.bounds.width
         
         return width * (3.0 / 5.0) + 1 //Add 1 for the cell separator
     }
     
     func heightForTextCell(indexPath: NSIndexPath) -> CGFloat {
-        let sizingCell = self.tableView.dequeueReusableCellWithIdentifier(TextCardTableViewCell.cellIdentifier()) as! TextCardTableViewCell
-        sizingCell.configureCell(self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage)
+        let sizingCell = self.tableView.dequeueReusableCell(withIdentifier: TextCardTableViewCell.cellIdentifier()) as! TextCardTableViewCell
+        sizingCell.configureCell(message: self.messages.object(at: indexPath.row) as! CarnivalMessage)
         
-        return self.calculateHeightForConfiguredSizingCell(sizingCell)
+        return self.calculateHeightForConfiguredSizingCell(sizingCell: sizingCell)
     }
     
     func calculateHeightForConfiguredSizingCell(sizingCell: UITableViewCell) -> CGFloat {
-        sizingCell.bounds = CGRectMake(0.0, 0.0, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds))
+        sizingCell.bounds = CGRect(x: 0.0, y: 0.0, width: self.tableView.frame.width, height: sizingCell.bounds.height)
         
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Get the message
-        let message  = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message  = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
-        CarnivalMessageStream.registerImpressionWithType(CarnivalImpressionType.StreamView, forMessage: message)
+        CarnivalMessageStream.registerImpression(with: CarnivalImpressionType.streamView, for: message)
         
         if(message.imageURL != nil || message.videoURL != nil) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(GraphicalCardTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! GraphicalCardTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: GraphicalCardTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! GraphicalCardTableViewCell
             
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(TextCardTableViewCell.cellIdentifier(), forIndexPath: indexPath) as! TextCardTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TextCardTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! TextCardTableViewCell
             
             return cell
         }
@@ -103,43 +103,43 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
     
     //MARK: TableView Delegate Methods
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Get the message
-        let message  = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message  = self.messages.object(at: indexPath.row) as! CarnivalMessage
         let aCell = cell as! TextCardTableViewCell
-        aCell.configureCell(message)
+        aCell.configureCell(message: message)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Get the Carnival Message
-        let message = self.messages.objectAtIndex(indexPath.row) as! CarnivalMessage
+        let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Present the full screen message
-        CarnivalMessageStream.presentMessageDetailForMessage(message)
+        CarnivalMessageStream.presentMessageDetail(for: message)
         
         //Mark the message as read
-        CarnivalMessageStream.markMessageAsRead(message, withResponse: nil)
+        CarnivalMessageStream.markMessage(asRead: message, withResponse: nil)
         
         //Deselect the row that is selected
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
     //MARK: UI
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "fetchMessages", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(GraphicalCardsViewController.fetchMessages), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     
     @IBAction func closeStream(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Bar Position Delegate
     
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-        return UIBarPosition.TopAttached
+        return UIBarPosition.topAttached
     }
     
     // MARK: Get Messages
@@ -150,14 +150,14 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
             
             if let error = anError {
                 print(error, terminator: "")
-                self.tableView.hidden = true
+                self.tableView.isHidden = true
                 self.emptyDataLabel.text = NSLocalizedString("Failed to get messages", comment:"")
                 
             }
             if let messages = theMessages {
                 self.messages = NSMutableArray(array:messages)
                 self.tableView.reloadData()
-                self.tableView.hidden = self.messages.count == 0
+                self.tableView.isHidden = self.messages.count == 0
                 self.emptyDataLabel.text = NSLocalizedString("You have no messages", comment:"")
 
             }
