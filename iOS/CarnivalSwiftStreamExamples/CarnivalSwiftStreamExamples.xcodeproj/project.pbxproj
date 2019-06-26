@@ -202,6 +202,7 @@
 				22B4335D1B7803FE00F4A1DE /* Resources */,
 				3E2D5C7F13DBB06F9870B5F9 /* 📦 Copy Pods Resources */,
 				C1366AB17EB2E4494B8B4B5C /* [CP] Copy Pods Resources */,
+				8F0A3A2999FEAB381F2F4CEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +322,30 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		8F0A3A2999FEAB381F2F4CEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-frameworks.sh",
+				"${PODS_ROOT}/Carnival/Carnival.framework",
+				"${PODS_ROOT}/Carnival/CarnivalExtension.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Carnival.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarnivalExtension.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C1366AB17EB2E4494B8B4B5C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,14 +355,46 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-resources.sh",
-				"${PODS_ROOT}/Carnival/Carnival.embeddedframework/Carnival.framework/Versions/A/Resources/CarnivalResources.bundle",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_message_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_refresh.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_share_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button_white@2x.png",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CarnivalResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_message_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_refresh.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_share_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button_white@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

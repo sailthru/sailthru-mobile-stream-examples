@@ -238,6 +238,7 @@
 				22CC19111B7324D600368642 /* Resources */,
 				17CF3658319861ECF4AF6A8F /* 📦 Copy Pods Resources */,
 				24F6B6F13089CC4A8ADB3964 /* [CP] Copy Pods Resources */,
+				B66774E1F5EDA9AF9B2D64C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,19 +343,75 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-resources.sh",
-				"${PODS_ROOT}/Carnival/Carnival.embeddedframework/Carnival.framework/Versions/A/Resources/CarnivalResources.bundle",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_message_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_refresh.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_share_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button_white@2x.png",
 				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CarnivalResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_message_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_refresh.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_share_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button_white@2x.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B66774E1F5EDA9AF9B2D64C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-frameworks.sh",
+				"${PODS_ROOT}/Carnival/Carnival.framework",
+				"${PODS_ROOT}/Carnival/CarnivalExtension.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Carnival.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarnivalExtension.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarnivalStreamExamples/Pods-CarnivalStreamExamples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D1508A18FFB8EE410C8E780B /* 📦 Check Pods Manifest.lock */ = {

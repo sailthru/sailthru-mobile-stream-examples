@@ -57,9 +57,9 @@ class StandardTableViewCell: UITableViewCell {
         case .text:
             self.typeLabel.text = NSLocalizedString("Text", comment:"")
             self.typeImage.image = UIImage(named: "text_icon")
-        case .fakeCall:
-            self.typeLabel.text = NSLocalizedString("Image", comment:"")
-            self.typeImage.image = UIImage(named: "video_icon")
+        case .standardPush:
+            self.typeLabel.text = NSLocalizedString("Text", comment:"")
+            self.typeImage.image = UIImage(named: "text_icon")
         default:
             self.typeLabel.text = NSLocalizedString("Other", comment:"")
             self.typeImage.image = UIImage(named: "text_icon")
