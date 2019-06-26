@@ -225,6 +225,7 @@
 					22B4335E1B7803FE00F4A1DE = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 9ZEH62KRVF;
+						LastSwiftMigration = 0940;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -419,7 +420,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -485,7 +487,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};

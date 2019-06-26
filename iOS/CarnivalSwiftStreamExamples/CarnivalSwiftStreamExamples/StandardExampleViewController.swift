@@ -169,7 +169,7 @@ class StandardExampleViewController: UIViewController {
     
     // MARK: Get Messages
     
-    func fetchMessages() {
+    @objc func fetchMessages() {
         CarnivalMessageStream.messages { (theMessages, anError) -> Void in
             self.refreshControl?.endRefreshing()
             
