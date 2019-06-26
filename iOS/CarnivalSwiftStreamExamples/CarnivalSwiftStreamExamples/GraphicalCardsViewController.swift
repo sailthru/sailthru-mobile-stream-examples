@@ -32,7 +32,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         self.refreshTableView()
     }
     
-    func refreshTableView() {
+    @IBAction func refreshTableView() {
         self.tableView!.setContentOffset(CGPoint(x: 0, y: -self.refreshControl!.frame.size.height), animated: true)
         self.refreshControl!.beginRefreshing()
         self.fetchMessages()
@@ -78,7 +78,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
@@ -128,7 +128,7 @@ class GraphicalCardsViewController: UIViewController, UITableViewDataSource, UIT
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(GraphicalCardsViewController.fetchMessages), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(GraphicalCardsViewController.fetchMessages), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     

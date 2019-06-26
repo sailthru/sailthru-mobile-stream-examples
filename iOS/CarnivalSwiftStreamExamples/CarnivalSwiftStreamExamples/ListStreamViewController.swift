@@ -123,14 +123,14 @@ class ListStreamViewController: UIViewController, UITableViewDataSource, UITable
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             self.deleteMessage(tableView: tableView, forRowAtIndexPath: indexPath as NSIndexPath)
         }
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let button = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: NSLocalizedString("Delete", comment:"")) { (action, indexPath) -> Void in
+        let button = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: NSLocalizedString("Delete", comment:"")) { (action, indexPath) -> Void in
             self.deleteMessage(tableView: tableView, forRowAtIndexPath: indexPath as NSIndexPath)
         }
         
@@ -150,14 +150,14 @@ class ListStreamViewController: UIViewController, UITableViewDataSource, UITable
         self.messages.remove(message)
         
         //Remove from Table View
-        tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.fade)
+        tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.fade)
     }
     
     //MARK: UI
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(ListStreamViewController.fetchMessages), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(ListStreamViewController.fetchMessages), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     

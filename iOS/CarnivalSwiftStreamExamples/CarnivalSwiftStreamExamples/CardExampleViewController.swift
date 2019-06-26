@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardExampleViewController: UIViewController {
+class CardExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var emptyDataLabel: UILabel!
     var messages: NSMutableArray = []
@@ -32,7 +32,7 @@ class CardExampleViewController: UIViewController {
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(CardExampleViewController.fetchMessages), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(CardExampleViewController.fetchMessages), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     
@@ -70,34 +70,34 @@ class CardExampleViewController: UIViewController {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: CardExampleTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! CardExampleTableViewCell
     }
     
     //MARK: TableView Delegate Methods
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Get the message
         let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
         //Configure the cell
         let aCell = cell as! CardExampleTableViewCell
-        aCell.configureCell(message: message, indexPath: indexPath)
+        aCell.configureCell(message: message, indexPath: indexPath as NSIndexPath)
         
         //Create a stream impression on the message
         CarnivalMessageStream.registerImpression(with: CarnivalImpressionType.streamView, for: message)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let size = self.rowHeightCache[indexPath.row] {
             return size;
         }
         
-        let size = self.heightForCell(indexPath: indexPath)
+        let size = self.heightForCell(indexPath: indexPath as NSIndexPath)
         self.rowHeightCache[indexPath.row] = size
 
         return size
@@ -116,12 +116,12 @@ class CardExampleViewController: UIViewController {
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Get the Carnival Message
         let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         

@@ -43,7 +43,7 @@ class CardExampleTableViewCell: UITableViewCell {
             return
         }
         self.imgView?.sd_setImage(with: message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
-        self.imgView?.contentMode = UIViewContentMode.scaleAspectFill
+        self.imgView?.contentMode = UIView.ContentMode.scaleAspectFill
         self.imgView?.clipsToBounds = true
         self.imgHeight.constant = 265;
         

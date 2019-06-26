@@ -20,7 +20,7 @@ class GraphicalCardTableViewCell: TextCardTableViewCell {
         super.configureCell(message: message)
         if message.imageURL != nil {
             self.imgView.sd_setImage(with: message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
-            self.imgView.contentMode = UIViewContentMode.scaleAspectFill
+            self.imgView.contentMode = UIView.ContentMode.scaleAspectFill
             self.imgView.clipsToBounds = true
         }
         self.timeBackground.layer.cornerRadius = 4.0

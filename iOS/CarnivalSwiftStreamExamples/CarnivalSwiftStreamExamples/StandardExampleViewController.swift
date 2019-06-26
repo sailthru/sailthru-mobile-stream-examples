@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StandardExampleViewController: UIViewController {
+class StandardExampleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var emptyDataLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -34,7 +34,7 @@ class StandardExampleViewController: UIViewController {
     
     func setUpRefreshControl() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: #selector(StandardExampleViewController.fetchMessages), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(StandardExampleViewController.fetchMessages), for: UIControl.Event.valueChanged)
         self.tableView.addSubview(self.refreshControl!)
     }
     
@@ -72,11 +72,11 @@ class StandardExampleViewController: UIViewController {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard section == 0 && self.messages.count > 0 else {
             return nil
         }
@@ -102,17 +102,17 @@ class StandardExampleViewController: UIViewController {
         
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: StandardTableViewCell.cellIdentifier(), for: indexPath as IndexPath) as! StandardTableViewCell
     }
     
     //MARK: TableView Delegate Methods
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         //Get the message
         let message  = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
@@ -124,12 +124,12 @@ class StandardExampleViewController: UIViewController {
         CarnivalMessageStream.registerImpression(with: CarnivalImpressionType.streamView, for: message)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let size = self.rowHeightCache[indexPath.row] {
             return size;
         }
         
-        let size = self.heightForCell(indexPath: indexPath)
+        let size = self.heightForCell(indexPath: indexPath as NSIndexPath)
         self.rowHeightCache[indexPath.row] = size
         
         return size
@@ -148,12 +148,12 @@ class StandardExampleViewController: UIViewController {
         sizingCell.setNeedsLayout()
         sizingCell.layoutIfNeeded()
         
-        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        let size: CGSize = sizingCell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         
         return size.height + 1 //Add 1 for the cell separator
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Get the Carnival Message
         let message = self.messages.object(at: indexPath.row) as! CarnivalMessage
         
@@ -185,7 +185,6 @@ class StandardExampleViewController: UIViewController {
                 self.tableView.reloadData()
                 self.tableView.isHidden = self.messages.count == 0
                 self.emptyDataLabel.text = NSLocalizedString("You have no messages", comment:"")
-                
             }
         }
     }

@@ -34,7 +34,7 @@ class StandardTableViewCell: UITableViewCell {
     func configureImage(message: CarnivalMessage) {
         if message.imageURL != nil {
             self.imgView?.sd_setImage(with: message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
-            self.imgView?.contentMode = UIViewContentMode.scaleAspectFill
+            self.imgView?.contentMode = UIView.ContentMode.scaleAspectFill
             self.imgView?.clipsToBounds = true
             self.imgHeight.constant = 265;
         }

@@ -195,12 +195,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22B4337E1B7803FE00F4A1DE /* Build configuration list for PBXNativeTarget "CarnivalSwiftStreamExamples" */;
 			buildPhases = (
+				051F9C378F0F5AF6B6A6C18F /* [CP] Check Pods Manifest.lock */,
 				6C5E6B07813BBCCB37D3EAEC /* 📦 Check Pods Manifest.lock */,
 				22B4335B1B7803FE00F4A1DE /* Sources */,
 				22B4335C1B7803FE00F4A1DE /* Frameworks */,
 				22B4335D1B7803FE00F4A1DE /* Resources */,
 				3E2D5C7F13DBB06F9870B5F9 /* 📦 Copy Pods Resources */,
-				F18E87AA5416D3694EE30827 /* 📦 Embed Pods Frameworks */,
+				C1366AB17EB2E4494B8B4B5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,7 +226,7 @@
 					22B4335E1B7803FE00F4A1DE = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 9ZEH62KRVF;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -239,6 +240,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -267,6 +269,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		051F9C378F0F5AF6B6A6C18F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarnivalSwiftStreamExamples-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3E2D5C7F13DBB06F9870B5F9 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,19 +321,28 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F18E87AA5416D3694EE30827 /* 📦 Embed Pods Frameworks */ = {
+		C1366AB17EB2E4494B8B4B5C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-resources.sh",
+				"${PODS_ROOT}/Carnival/Carnival.embeddedframework/Carnival.framework/Versions/A/Resources/CarnivalResources.bundle",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CarnivalResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarnivalSwiftStreamExamples/Pods-CarnivalSwiftStreamExamples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -420,8 +453,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -487,8 +519,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.carnival.streamexamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};

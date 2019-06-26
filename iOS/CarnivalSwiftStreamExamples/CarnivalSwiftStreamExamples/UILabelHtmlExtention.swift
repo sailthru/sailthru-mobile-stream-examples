@@ -31,7 +31,7 @@ extension UILabel {
                                                   self.hexStringFromColor(color: self.textColor));
         
         do {
-            try self.attributedText = NSAttributedString.init(data: string.data(using: String.Encoding.unicode)!, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8], documentAttributes: nil)
+            try self.attributedText = NSAttributedString.init(data: string.data(using: String.Encoding.unicode)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
         } catch {
             
         }
