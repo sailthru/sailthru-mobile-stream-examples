@@ -15,6 +15,8 @@
 		<dict>
 			<key>FooterText</key>
 			<string>Please refer to our privacy policy and terms of service at http://carnival.io</string>
+			<key>License</key>
+			<string>commercial</string>
 			<key>Title</key>
 			<string>Carnival</string>
 			<key>Type</key>
@@ -43,6 +45,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>DateTools</string>
 			<key>Type</key>
@@ -71,6 +75,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 </string>
+			<key>License</key>
+			<string>MIT</string>
 			<key>Title</key>
 			<string>SDWebImage</string>
 			<key>Type</key>

@@ -5,12 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -100,7 +100,7 @@ public class ListStreamActivity extends AppCompatActivity {
                         ListStreamActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                mAdapter.notifyItemRangeInserted(0, messages.size() - 1);
+                                mAdapter.notifyItemRangeInserted(0, messages.size());
                                 crossfadeViews(loadingLayout, mRecyclerView);
                             }
                         });

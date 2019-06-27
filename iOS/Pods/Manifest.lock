@@ -1,5 +1,7 @@
 PODS:
-  - Carnival (5.1.0)
+  - Carnival (8.3.0):
+    - Carnival/Extension (= 8.3.0)
+  - Carnival/Extension (8.3.0)
   - DateTools (1.7.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
@@ -10,11 +12,17 @@ DEPENDENCIES:
   - DateTools
   - SDWebImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Carnival
+    - DateTools
+    - SDWebImage
+
 SPEC CHECKSUMS:
-  Carnival: c6342c9f7c6572fd3859db971752db0a6fb6020c
+  Carnival: 6cd5edfb5e8a0458073b5f58471fa230f88dc0d5
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 972c41e997c783a4de7cd7e30c300c2d1d84ef3b
+PODFILE CHECKSUM: a1576b226336c85e7c160398538ecd299bf12836
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.6.2

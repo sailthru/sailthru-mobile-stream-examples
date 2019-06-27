@@ -9,12 +9,12 @@
 import UIKit
 
 class RoundedButton: UIButton {
-    override func drawRect(rect: CGRect) {
-        let insets = UIEdgeInsetsMake(0, 22.5, 0, 22.5)
-        let buttonBg = UIImage(named: "button_bg")?.resizableImageWithCapInsets(insets)
-        let buttonBgPressed = UIImage(named: "button_bg_pressed")?.resizableImageWithCapInsets(insets)
-        self.setBackgroundImage(buttonBg, forState: UIControlState.Normal)
-        self.setBackgroundImage(buttonBgPressed, forState: UIControlState.Highlighted)
-        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
+    override func draw(_ rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: 0, left: 22.5, bottom: 0, right: 22.5)
+        let buttonBg = UIImage(named: "button_bg")?.resizableImage(withCapInsets: insets)
+        let buttonBgPressed = UIImage(named: "button_bg_pressed")?.resizableImage(withCapInsets: insets)
+        self.setBackgroundImage(buttonBg, for: [])
+        self.setBackgroundImage(buttonBgPressed, for: UIControl.State.highlighted)
+        self.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
     }
 }

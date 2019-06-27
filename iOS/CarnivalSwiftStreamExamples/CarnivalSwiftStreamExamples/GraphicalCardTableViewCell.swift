@@ -17,24 +17,24 @@ class GraphicalCardTableViewCell: TextCardTableViewCell {
     }
     
     override func configureCell(message: CarnivalMessage) {
-        super.configureCell(message)
+        super.configureCell(message: message)
         if message.imageURL != nil {
-            self.imgView.sd_setImageWithURL(message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
-            self.imgView.contentMode = UIViewContentMode.ScaleAspectFill
+            self.imgView.sd_setImage(with: message.imageURL, placeholderImage: UIImage(named: "placeholder_image"))
+            self.imgView.contentMode = UIView.ContentMode.scaleAspectFill
             self.imgView.clipsToBounds = true
         }
         self.timeBackground.layer.cornerRadius = 4.0
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         let backgroundColor = self.unreadLabel.backgroundColor
         super.setSelected(selected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
     
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         let backgroundColor = self.unreadLabel.backgroundColor
-        super.setHighlighted(selected, animated: animated)
+        super.setHighlighted(isSelected, animated: animated)
         self.unreadLabel.backgroundColor = backgroundColor
     }
 }
