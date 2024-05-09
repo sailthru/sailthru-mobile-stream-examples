@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="message" type="com.marigold.sdk.model.Message"/>
+        <variable name="relativeTime" type="String"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.marigold.view.RectangleImageView
+                android:id="@+id/media_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                custom:widthRatio="16"
+                custom:heightRatio="9"
+                custom:fixedDimension="width"
+                android:background="@drawable/bg_tile_gradient" />
+
+            <TextView
+                android:id="@+id/unread_indicator_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unread"
+                android:textSize="11sp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_tile_unread"
+                android:layout_margin="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true" />
+
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{message.title}"
+                android:textColor="@color/tile_title_color"
+                android:textSize="17sp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_below="@+id/media_image_view"/>
+
+            <TextView
+                android:id="@+id/content_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" @{message.text}"
+                android:textColor="@color/tile_subtext_color"
+                android:textSize="14sp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/title_text_view"/>
+
+            <TextView
+                android:id="@+id/type_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_meta_camera"
+                android:drawableLeft="@drawable/ic_meta_camera"
+                android:drawablePadding="5dp"
+                android:textColor="@color/tile_meta_color"
+                android:textSize="12sp"
+                android:text="@string/image"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/content_text_view"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginBottom="18dp"
+                 />
+
+            <TextView
+                android:id="@+id/dividerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="•"
+                android:textSize="12sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/tile_meta_color"
+                android:layout_toRightOf="@+id/type_text_view"
+                android:layout_toEndOf="@+id/type_text_view"
+                android:layout_alignBaseline="@+id/type_text_view"/>
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:text="@{relativeTime}"
+                android:textColor="@color/tile_meta_color"
+                android:drawableStart="@drawable/ic_meta_time"
+                android:drawableLeft="@drawable/ic_meta_time"
+                android:drawablePadding="5dp"
+                android:layout_toRightOf="@+id/dividerTextView"
+                android:layout_toEndOf="@+id/dividerTextView"
+                android:layout_alignBaseline="@+id/type_text_view"
+                android:gravity="center_vertical"
+                />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/media_image_view"
+                android:layout_alignBottom="@+id/type_text_view"
+                android:layout_marginBottom="-18dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
