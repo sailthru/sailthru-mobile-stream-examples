@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1D5B810C-C794-442F-851E-A94F5CFE45BB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MarigoldStreamExamples</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1D11766CB0602F321D313B74EF3A5964D8A491A4</key>
+		<string>https://github.com/carnivalmobile/carnival-ios-examples.git</string>
+		<key>200B07313962EF2B2D29AF68304880560B00C63D</key>
+		<string>https://github.com/carnivalmobile/carnival-ios-examples-source.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MarigoldStreamExamples.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1D11766CB0602F321D313B74EF3A5964D8A491A4</key>
+		<string>../../carnival-ios-examples</string>
+		<key>200B07313962EF2B2D29AF68304880560B00C63D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/carnivalmobile/carnival-ios-examples-source.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>200B07313962EF2B2D29AF68304880560B00C63D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1D11766CB0602F321D313B74EF3A5964D8A491A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>carnival-ios-examples</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>200B07313962EF2B2D29AF68304880560B00C63D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>carnival-ios-examples-source</string>
+		</dict>
+	</array>
+</dict>
+</plist>
