@@ -46,7 +46,8 @@ Make sure jcenter is in the repositories list for your projects in the top-level
     #!groovy
     allprojects {
        repositories {
-           jcenter()
+           google()
+           mavenCentral()
        }
     }
 
@@ -76,8 +77,8 @@ Once you've defined the theme, apply it to the Message Stream Activity in your m
 
 That's the setup done for the Marigold Stream Module, now it can be called like any other activity in your application.
 
-    #!java
-    public void foo(View v) {
-      Intent i = new Intent(this, TileStreamActivity.class);
-      startActivity(i);
+    #!kotlin
+    fun foo(v: View) {
+    val intent = Intent(this, TileStreamActivity::class.java)
+    startActivity(intent)
     }

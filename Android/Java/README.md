@@ -46,7 +46,8 @@ Make sure jcenter is in the repositories list for your projects in the top-level
     #!groovy
     allprojects {
        repositories {
-           jcenter()
+           google()
+           mavenCentral()
        }
     }
 
