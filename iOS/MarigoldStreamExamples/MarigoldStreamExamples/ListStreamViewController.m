@@ -162,7 +162,7 @@
         MARMessage *message = [self.messages objectAtIndex:indexPath.row];
 
         //Register the message as deleted with Marigold
-        //[MarigoldMessageStream removeMessage:message withResponse:NULL]; //TODO: Uncomment this when you're happy with how the stream deletion looks and works.
+        //[MARMessageStream removeMessage:message withResponse:NULL]; //TODO: Uncomment this when you're happy with how the stream deletion looks and works.
         
         //Remove it from the data source
         [self.messages removeObject:message];

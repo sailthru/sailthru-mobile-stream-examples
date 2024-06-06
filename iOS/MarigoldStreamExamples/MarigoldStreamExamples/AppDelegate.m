@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Override point for customization after application launch.
-    [[Marigold new] startEngine:@"6c566d865f4d647ab6f2c9f2653d670090751b80" error:nil];
+    [[Marigold new] startEngine:@"" error:nil];
 
     return YES;
 }
