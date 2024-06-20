@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/angeloesquibel/sailthru-mobile-stream-examples/iOS/MarigoldSwiftStreamExamples/MarigoldSwiftStreamExamples.xcodeproj">
+      location = "group:MarigoldStreamExamples/MarigoldStreamExamples.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/angeloesquibel/sailthru-mobile-stream-examples/iOS/MarigoldStreamExamples/MarigoldStreamExamples.xcodeproj">
+      location = "group:MarigoldSwiftStreamExamples/MarigoldSwiftStreamExamples.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
