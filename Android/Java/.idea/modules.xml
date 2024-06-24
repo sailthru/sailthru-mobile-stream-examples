@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Java.iml" filepath="$PROJECT_DIR$/.idea/modules/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.iml" filepath="$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MarigoldUtils/Java.MarigoldUtils.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Java.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Java.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Java.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Java.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Java.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Java.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Java.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Java.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.iml" filepath="$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/cardstream/Java.cardstream.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.iml" filepath="$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/graphicalstream/Java.graphicalstream.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.iml" filepath="$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/liststream/Java.liststream.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.iml" filepath="$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.main.iml" filepath="$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/standardstream/Java.standardstream.unitTest.iml" />
+    </modules>
+  </component>
+</project>

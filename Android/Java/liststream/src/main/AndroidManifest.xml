@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marigold.stream.list">
+
+    <application>
+        <activity android:name=".ListStreamActivity"/>
+    </application>
+
+</manifest>

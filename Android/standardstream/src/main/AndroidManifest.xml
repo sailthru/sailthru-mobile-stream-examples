@@ -1,8 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.carnivalmobile.stream.standard">
-
-    <application>
-        <activity android:name=".TileStreamActivity"/>
-    </application>
-
-</manifest>

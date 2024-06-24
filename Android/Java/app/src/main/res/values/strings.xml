@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Marigold Streams</string>
+
+    <string name="intro">This app showcases different ways that you can style the Marigold message stream to suit your app. Pick one of these samples for inspiration or design and build your own from scratch.</string>
+
+    <string-array name="greetings">
+        <item>Hi</item>
+        <item>Bonjour</item>
+        <item>今日は</item>
+        <item>你好</item>
+        <item>Olá</item>
+        <item>Привет</item>
+    </string-array>
+
+</resources>
