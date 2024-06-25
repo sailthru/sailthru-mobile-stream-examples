@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2237D8EE1BDF197000700605 /* StandardExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237D8ED1BDF197000700605 /* StandardExampleViewController.m */; };
+		2237D8F41BDF1DA000700605 /* StandardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */; };
+		225C7B251B9D4009000CC025 /* MarigoldLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B241B9D4009000CC025 /* MarigoldLabel.m */; };
+		225C7B2B1B9E49F9000CC025 /* ListStreamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B2A1B9E49F9000CC025 /* ListStreamTableViewCell.m */; };
+		225C7B2F1B9F92ED000CC025 /* GraphicalCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B2E1B9F92ED000CC025 /* GraphicalCardsViewController.m */; };
+		225C7B321B9F96DC000CC025 /* GraphicalCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B311B9F96DC000CC025 /* GraphicalCardTableViewCell.m */; };
+		225C7B351B9F96ED000CC025 /* TextCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */; };
+		22BD55131B74458500BDDD86 /* ListStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD55121B74458500BDDD86 /* ListStreamViewController.m */; };
+		22C325661BFA838800CC37D0 /* CardExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C325631BFA838800CC37D0 /* CardExampleViewController.m */; };
+		22C325671BFA838800CC37D0 /* CardExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */; };
+		22CB31761BA78CC100F1E60D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22CB31751BA78CC100F1E60D /* Localizable.strings */; };
+		22CC19191B7324D600368642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC19181B7324D600368642 /* main.m */; };
+		22CC191C1B7324D600368642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC191B1B7324D600368642 /* AppDelegate.m */; };
+		22CC19221B7324D600368642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19201B7324D600368642 /* Main.storyboard */; };
+		22CC19241B7324D600368642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19231B7324D600368642 /* Images.xcassets */; };
+		22CC19271B7324D600368642 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CC19251B7324D600368642 /* LaunchScreen.xib */; };
+		22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EB2DB01C166BEF00114ECD /* HomeViewController.m */; };
+		666B255D1BABD1900011C283 /* RoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B255C1BABD1900011C283 /* RoundedButton.m */; };
+		A51D942164D3B89C953EF182 /* libPods-MarigoldStreamExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958CB4E12A1A3D0FC7374C82 /* libPods-MarigoldStreamExamples.a */; };
+		AAA349EC1D2B60620002C759 /* UILabel+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA349EB1D2B60620002C759 /* UILabel+HTML.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2237D8EC1BDF197000700605 /* StandardExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardExampleViewController.h; sourceTree = "<group>"; };
+		2237D8ED1BDF197000700605 /* StandardExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardExampleViewController.m; sourceTree = "<group>"; };
+		2237D8F21BDF1DA000700605 /* StandardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardTableViewCell.h; sourceTree = "<group>"; };
+		2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardTableViewCell.m; sourceTree = "<group>"; };
+		225C7B231B9D4009000CC025 /* MarigoldLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarigoldLabel.h; sourceTree = "<group>"; };
+		225C7B241B9D4009000CC025 /* MarigoldLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarigoldLabel.m; sourceTree = "<group>"; };
+		225C7B291B9E49F9000CC025 /* ListStreamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListStreamTableViewCell.h; sourceTree = "<group>"; };
+		225C7B2A1B9E49F9000CC025 /* ListStreamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListStreamTableViewCell.m; sourceTree = "<group>"; };
+		225C7B2D1B9F92ED000CC025 /* GraphicalCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicalCardsViewController.h; sourceTree = "<group>"; };
+		225C7B2E1B9F92ED000CC025 /* GraphicalCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicalCardsViewController.m; sourceTree = "<group>"; };
+		225C7B301B9F96DC000CC025 /* GraphicalCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicalCardTableViewCell.h; sourceTree = "<group>"; };
+		225C7B311B9F96DC000CC025 /* GraphicalCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicalCardTableViewCell.m; sourceTree = "<group>"; };
+		225C7B331B9F96EC000CC025 /* TextCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCardTableViewCell.h; sourceTree = "<group>"; };
+		225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCardTableViewCell.m; sourceTree = "<group>"; };
+		22BD55111B74458500BDDD86 /* ListStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListStreamViewController.h; sourceTree = "<group>"; };
+		22BD55121B74458500BDDD86 /* ListStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListStreamViewController.m; sourceTree = "<group>"; };
+		22C325621BFA838800CC37D0 /* CardExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExampleViewController.h; sourceTree = "<group>"; };
+		22C325631BFA838800CC37D0 /* CardExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExampleViewController.m; sourceTree = "<group>"; };
+		22C325641BFA838800CC37D0 /* CardExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardExampleTableViewCell.h; sourceTree = "<group>"; };
+		22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardExampleTableViewCell.m; sourceTree = "<group>"; };
+		22CB31751BA78CC100F1E60D /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		22CC19131B7324D600368642 /* MarigoldStreamExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarigoldStreamExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22CC19171B7324D600368642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22CC19181B7324D600368642 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22CC191A1B7324D600368642 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22CC191B1B7324D600368642 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22CC19211B7324D600368642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22CC19231B7324D600368642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22CC19261B7324D600368642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		22EB2DAF1C166BEF00114ECD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		22EB2DB01C166BEF00114ECD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		382924403C48105ECF28C421 /* Pods-MarigoldStreamExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarigoldStreamExamples.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples.release.xcconfig"; sourceTree = "<group>"; };
+		666B255B1BABD1900011C283 /* RoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedButton.h; sourceTree = "<group>"; };
+		666B255C1BABD1900011C283 /* RoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedButton.m; sourceTree = "<group>"; };
+		66E8BC3C1BB013A700E7DC2B /* ScreenSizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenSizeHelper.h; sourceTree = "<group>"; };
+		958CB4E12A1A3D0FC7374C82 /* libPods-MarigoldStreamExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarigoldStreamExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA349EA1D2B60620002C759 /* UILabel+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HTML.h"; sourceTree = "<group>"; };
+		AAA349EB1D2B60620002C759 /* UILabel+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HTML.m"; sourceTree = "<group>"; };
+		B115D1EF3E0384082140EE26 /* Pods-MarigoldStreamExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarigoldStreamExamples.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22CC19101B7324D600368642 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A51D942164D3B89C953EF182 /* libPods-MarigoldStreamExamples.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15BA08B6ABB73D4BCA7210C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B115D1EF3E0384082140EE26 /* Pods-MarigoldStreamExamples.debug.xcconfig */,
+				382924403C48105ECF28C421 /* Pods-MarigoldStreamExamples.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		225C7B2C1B9F9295000CC025 /* Graphical Cards Example */ = {
+			isa = PBXGroup;
+			children = (
+				225C7B231B9D4009000CC025 /* MarigoldLabel.h */,
+				225C7B241B9D4009000CC025 /* MarigoldLabel.m */,
+				225C7B331B9F96EC000CC025 /* TextCardTableViewCell.h */,
+				225C7B341B9F96ED000CC025 /* TextCardTableViewCell.m */,
+				225C7B301B9F96DC000CC025 /* GraphicalCardTableViewCell.h */,
+				225C7B311B9F96DC000CC025 /* GraphicalCardTableViewCell.m */,
+				225C7B2D1B9F92ED000CC025 /* GraphicalCardsViewController.h */,
+				225C7B2E1B9F92ED000CC025 /* GraphicalCardsViewController.m */,
+			);
+			name = "Graphical Cards Example";
+			sourceTree = "<group>";
+		};
+		228D47081C20E80100D16AF4 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				22CC19201B7324D600368642 /* Main.storyboard */,
+				22CC19231B7324D600368642 /* Images.xcassets */,
+				22CC19251B7324D600368642 /* LaunchScreen.xib */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		228D47091C20E80A00D16AF4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				22EB2DAF1C166BEF00114ECD /* HomeViewController.h */,
+				22EB2DB01C166BEF00114ECD /* HomeViewController.m */,
+				22CC191A1B7324D600368642 /* AppDelegate.h */,
+				22CC191B1B7324D600368642 /* AppDelegate.m */,
+				66E8BC3C1BB013A700E7DC2B /* ScreenSizeHelper.h */,
+				666B255B1BABD1900011C283 /* RoundedButton.h */,
+				666B255C1BABD1900011C283 /* RoundedButton.m */,
+				22CB31751BA78CC100F1E60D /* Localizable.strings */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		22915EFA1BDF087600F852EB /* Standard Example */ = {
+			isa = PBXGroup;
+			children = (
+				2237D8EC1BDF197000700605 /* StandardExampleViewController.h */,
+				2237D8ED1BDF197000700605 /* StandardExampleViewController.m */,
+				2237D8F21BDF1DA000700605 /* StandardTableViewCell.h */,
+				2237D8F31BDF1DA000700605 /* StandardTableViewCell.m */,
+			);
+			name = "Standard Example";
+			sourceTree = "<group>";
+		};
+		22BD55141B74458900BDDD86 /* List Example */ = {
+			isa = PBXGroup;
+			children = (
+				225C7B291B9E49F9000CC025 /* ListStreamTableViewCell.h */,
+				225C7B2A1B9E49F9000CC025 /* ListStreamTableViewCell.m */,
+				22BD55111B74458500BDDD86 /* ListStreamViewController.h */,
+				22BD55121B74458500BDDD86 /* ListStreamViewController.m */,
+			);
+			name = "List Example";
+			sourceTree = "<group>";
+		};
+		22C325611BFA836400CC37D0 /* Card Example */ = {
+			isa = PBXGroup;
+			children = (
+				22C325621BFA838800CC37D0 /* CardExampleViewController.h */,
+				22C325631BFA838800CC37D0 /* CardExampleViewController.m */,
+				22C325641BFA838800CC37D0 /* CardExampleTableViewCell.h */,
+				22C325651BFA838800CC37D0 /* CardExampleTableViewCell.m */,
+			);
+			name = "Card Example";
+			sourceTree = "<group>";
+		};
+		22CC190A1B7324D600368642 = {
+			isa = PBXGroup;
+			children = (
+				22CC19151B7324D600368642 /* MarigoldStreamExamples */,
+				22CC19141B7324D600368642 /* Products */,
+				15BA08B6ABB73D4BCA7210C2 /* Pods */,
+				DE9747D376F65A2C4B5FA8D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		22CC19141B7324D600368642 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22CC19131B7324D600368642 /* MarigoldStreamExamples.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22CC19151B7324D600368642 /* MarigoldStreamExamples */ = {
+			isa = PBXGroup;
+			children = (
+				AAA349E91D2B5FCF0002C759 /* Categories */,
+				228D47081C20E80100D16AF4 /* User Interface */,
+				228D47091C20E80A00D16AF4 /* Misc */,
+				22BD55141B74458900BDDD86 /* List Example */,
+				225C7B2C1B9F9295000CC025 /* Graphical Cards Example */,
+				22915EFA1BDF087600F852EB /* Standard Example */,
+				22C325611BFA836400CC37D0 /* Card Example */,
+				22CC19161B7324D600368642 /* Supporting Files */,
+			);
+			path = MarigoldStreamExamples;
+			sourceTree = "<group>";
+		};
+		22CC19161B7324D600368642 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22CC19171B7324D600368642 /* Info.plist */,
+				22CC19181B7324D600368642 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAA349E91D2B5FCF0002C759 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AAA349EA1D2B60620002C759 /* UILabel+HTML.h */,
+				AAA349EB1D2B60620002C759 /* UILabel+HTML.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		DE9747D376F65A2C4B5FA8D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				958CB4E12A1A3D0FC7374C82 /* libPods-MarigoldStreamExamples.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22CC19121B7324D600368642 /* MarigoldStreamExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22CC19361B7324D600368642 /* Build configuration list for PBXNativeTarget "MarigoldStreamExamples" */;
+			buildPhases = (
+				0BA722C616AD3FB96E83F770 /* [CP] Check Pods Manifest.lock */,
+				D1508A18FFB8EE410C8E780B /* 📦 Check Pods Manifest.lock */,
+				22CC190F1B7324D600368642 /* Sources */,
+				22CC19101B7324D600368642 /* Frameworks */,
+				22CC19111B7324D600368642 /* Resources */,
+				17CF3658319861ECF4AF6A8F /* 📦 Copy Pods Resources */,
+				24F6B6F13089CC4A8ADB3964 /* [CP] Copy Pods Resources */,
+				E39351D9DCD47D74F57B4FED /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarigoldStreamExamples;
+			productName = MarigoldStreamExamples;
+			productReference = 22CC19131B7324D600368642 /* MarigoldStreamExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22CC190B1B7324D600368642 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Carnival Mobile";
+				TargetAttributes = {
+					22CC19121B7324D600368642 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 264H7447N5;
+					};
+				};
+			};
+			buildConfigurationList = 22CC190E1B7324D600368642 /* Build configuration list for PBXProject "MarigoldStreamExamples" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 22CC190A1B7324D600368642;
+			productRefGroup = 22CC19141B7324D600368642 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22CC19121B7324D600368642 /* MarigoldStreamExamples */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22CC19111B7324D600368642 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22CC19221B7324D600368642 /* Main.storyboard in Resources */,
+				22CB31761BA78CC100F1E60D /* Localizable.strings in Resources */,
+				22CC19271B7324D600368642 /* LaunchScreen.xib in Resources */,
+				22CC19241B7324D600368642 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BA722C616AD3FB96E83F770 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarigoldStreamExamples-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17CF3658319861ECF4AF6A8F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24F6B6F13089CC4A8ADB3964 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools.bundle",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_close_button@2x.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_close_button_white@2x.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_message_close_button@2x.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_refresh.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari-7@2x~ipad.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari-7@2x~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari-7@3x~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari-7~ipad.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari-7~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari@2x~ipad.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari@2x~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari@3x~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari~ipad.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_safari~iphone.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_share_button_white@2x.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_stream_back_button@2x.png",
+				"${PODS_ROOT}/Marigold/Marigold.xcframework/ios-arm64/Marigold.framework/cp_stream_back_button_white@2x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_message_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_refresh.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_share_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button_white@2x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1508A18FFB8EE410C8E780B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E39351D9DCD47D74F57B4FED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Marigold/Marigold.framework/Marigold",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marigold.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarigoldStreamExamples/Pods-MarigoldStreamExamples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22CC190F1B7324D600368642 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				225C7B2B1B9E49F9000CC025 /* ListStreamTableViewCell.m in Sources */,
+				22CC191C1B7324D600368642 /* AppDelegate.m in Sources */,
+				22BD55131B74458500BDDD86 /* ListStreamViewController.m in Sources */,
+				2237D8F41BDF1DA000700605 /* StandardTableViewCell.m in Sources */,
+				225C7B251B9D4009000CC025 /* MarigoldLabel.m in Sources */,
+				22EB2DB11C166BEF00114ECD /* HomeViewController.m in Sources */,
+				666B255D1BABD1900011C283 /* RoundedButton.m in Sources */,
+				AAA349EC1D2B60620002C759 /* UILabel+HTML.m in Sources */,
+				22C325661BFA838800CC37D0 /* CardExampleViewController.m in Sources */,
+				225C7B2F1B9F92ED000CC025 /* GraphicalCardsViewController.m in Sources */,
+				2237D8EE1BDF197000700605 /* StandardExampleViewController.m in Sources */,
+				22CC19191B7324D600368642 /* main.m in Sources */,
+				22C325671BFA838800CC37D0 /* CardExampleTableViewCell.m in Sources */,
+				225C7B351B9F96ED000CC025 /* TextCardTableViewCell.m in Sources */,
+				225C7B321B9F96DC000CC025 /* GraphicalCardTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		22CC19201B7324D600368642 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22CC19211B7324D600368642 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22CC19251B7324D600368642 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22CC19261B7324D600368642 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22CC19341B7324D600368642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		22CC19351B7324D600368642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22CC19371B7324D600368642 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B115D1EF3E0384082140EE26 /* Pods-MarigoldStreamExamples.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MarigoldStreamExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CarnivalMobile.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22CC19381B7324D600368642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 382924403C48105ECF28C421 /* Pods-MarigoldStreamExamples.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MarigoldStreamExamples/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CarnivalMobile.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22CC190E1B7324D600368642 /* Build configuration list for PBXProject "MarigoldStreamExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CC19341B7324D600368642 /* Debug */,
+				22CC19351B7324D600368642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22CC19361B7324D600368642 /* Build configuration list for PBXNativeTarget "MarigoldStreamExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22CC19371B7324D600368642 /* Debug */,
+				22CC19381B7324D600368642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22CC190B1B7324D600368642 /* Project object */;
+}

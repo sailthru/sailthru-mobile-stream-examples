@@ -1,20 +1,20 @@
 source 'https://github.com/CocoaPods/Specs.git'
-workspace 'CarnivalStreamExamples.xcworkspace'
-xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
-xcodeproj 'CarnivalStreamExamples/CarnivalStreamExamples.xcodeproj'
+workspace 'MarigoldStreamExamples.xcworkspace'
+xcodeproj 'MarigoldSwiftStreamExamples/MarigoldSwiftStreamExamples.xcodeproj'
+xcodeproj 'MarigoldStreamExamples/MarigoldStreamExamples.xcodeproj'
 
-target :CarnivalSwiftStreamExamples do
-    platform :ios, "8.0"
-    pod "Carnival"
+target :MarigoldSwiftStreamExamples do
+    platform :ios, "12.0"
+    pod "Marigold"
     pod "SDWebImage"
     pod "DateTools"
-    xcodeproj 'CarnivalSwiftStreamExamples/CarnivalSwiftStreamExamples.xcodeproj'
+    xcodeproj 'MarigoldSwiftStreamExamples/MarigoldSwiftStreamExamples.xcodeproj'
 end
 
-target :CarnivalStreamExamples do
-    platform :ios, "8.0"
-    pod "Carnival"
+target :MarigoldStreamExamples do
+    platform :ios, "12.0"
+    pod "Marigold"
     pod "SDWebImage"
     pod "DateTools"
-    xcodeproj 'CarnivalStreamExamples/CarnivalStreamExamples.xcodeproj'
+    xcodeproj 'MarigoldStreamExamples/MarigoldStreamExamples.xcodeproj'
 end
